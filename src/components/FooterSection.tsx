@@ -1,3 +1,5 @@
+import { Button } from "@/components/ui/neon-button";
+
 const footerLinks = {
   Produit: [
     { label: "Comment ça marche", href: "#comment-ca-marche" },
@@ -28,11 +30,8 @@ const FooterSection = () => {
             Réservez un appel découverte gratuit de 15 minutes. On vous montre exactement
             comment Calendia peut s'adapter à votre entreprise.
           </p>
-          <a
-            href="#"
-            className="inline-flex px-10 py-4 bg-primary text-primary-foreground font-semibold text-lg rounded-pill hover:brightness-90 hover:scale-[1.02] transition-all shadow-lg"
-          >
-            Réserver mon appel gratuit
+          <a href="#">
+            <Button variant="solid" size="xl">Réserver mon appel gratuit</Button>
           </a>
           <p className="text-sm text-white/50 mt-4">
             Configuration en moins de 48h. Sans engagement. Phase pilote incluse.

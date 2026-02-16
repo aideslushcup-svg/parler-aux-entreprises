@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/neon-button";
 
 const navLinks = [
   { label: "Comment ça marche", href: "#comment-ca-marche" },
@@ -45,11 +46,8 @@ const Navbar = () => {
         </div>
 
         {/* Desktop CTA */}
-        <a
-          href="#cta-final"
-          className="hidden md:inline-flex items-center px-6 py-2.5 bg-primary text-primary-foreground font-semibold text-sm rounded-pill hover:brightness-90 transition-all hover:scale-[1.02]"
-        >
-          Réserver un appel
+        <a href="#cta-final" className="hidden md:inline-flex">
+          <Button variant="solid" size="default">Réserver un appel</Button>
         </a>
 
         {/* Mobile hamburger */}
@@ -82,12 +80,8 @@ const Navbar = () => {
               {link.label}
             </a>
           ))}
-          <a
-            href="#cta-final"
-            onClick={() => setMenuOpen(false)}
-            className="px-8 py-3.5 bg-primary text-primary-foreground font-semibold text-lg rounded-pill hover:brightness-90 transition-all"
-          >
-            Réserver un appel
+          <a href="#cta-final" onClick={() => setMenuOpen(false)}>
+            <Button variant="solid" size="lg">Réserver un appel</Button>
           </a>
         </div>
       )}

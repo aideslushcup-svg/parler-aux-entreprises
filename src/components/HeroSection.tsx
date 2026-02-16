@@ -1,4 +1,5 @@
 import { Star } from "lucide-react";
+import { Button } from "@/components/ui/neon-button";
 
 const FloatingCard = ({
   children,
@@ -44,17 +45,11 @@ const HeroSection = () => {
 
         {/* Buttons */}
         <div className="hero-stagger-4 flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
-          <a
-            href="#cta-final"
-            className="px-8 py-3.5 bg-primary text-primary-foreground font-semibold text-base rounded-pill hover:brightness-90 hover:scale-[1.02] transition-all shadow-lg"
-          >
-            Réserver un appel
+          <a href="#cta-final">
+            <Button variant="solid" size="lg">Réserver un appel</Button>
           </a>
-          <a
-            href="#vsl"
-            className="px-8 py-3.5 border-2 border-border text-foreground font-semibold text-base rounded-pill hover:border-primary hover:text-primary transition-all"
-          >
-            Regarder la démo
+          <a href="#vsl">
+            <Button variant="outline" size="lg" neon={false}>Regarder la démo</Button>
           </a>
         </div>
 

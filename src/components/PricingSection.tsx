@@ -1,4 +1,5 @@
 import { X, Check } from "lucide-react";
+import { Button } from "@/components/ui/neon-button";
 
 const tradFeatures = [
   "Disponible 9h à 17h seulement",
@@ -66,11 +67,8 @@ const PricingSection = () => {
         </div>
 
         <div className="text-center mt-10">
-          <a
-            href="#cta-final"
-            className="inline-flex px-8 py-3.5 bg-primary text-primary-foreground font-semibold rounded-pill hover:brightness-90 hover:scale-[1.02] transition-all"
-          >
-            Réserver un appel découverte
+          <a href="#cta-final">
+            <Button variant="solid" size="lg">Réserver un appel découverte</Button>
           </a>
         </div>
       </div>
