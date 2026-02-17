@@ -7,7 +7,7 @@ interface VideoPlayerProps {
 
 const VideoPlayer = ({ videoUrl = null }: VideoPlayerProps) => {
   return (
-    <section id="vsl" className="pb-16 md:pb-[120px] bg-background">
+    <section id="vsl" className="relative z-10 pb-16 md:pb-[120px]">
       <div className="container-narrow">
         <div className="relative max-w-[900px] mx-auto">
           {/* Glow effect */}

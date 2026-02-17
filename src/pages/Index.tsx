@@ -7,15 +7,18 @@ import PricingSection from "@/components/PricingSection";
 import IntegrationsSection from "@/components/IntegrationsSection";
 import FAQSection from "@/components/FAQSection";
 import FooterSection from "@/components/FooterSection";
+import { AuroraBackground } from "@/components/ui/aurora-background";
 
 const Index = () => {
   return (
     <>
       <Navbar />
       <main>
-        <HeroSection />
-        <VideoPlayer videoUrl={null} />
-        <ProblemSolution />
+        <AuroraBackground className="dark">
+          <HeroSection />
+          <VideoPlayer videoUrl={null} />
+          <ProblemSolution />
+        </AuroraBackground>
         <HowItWorks />
         <PricingSection />
         <IntegrationsSection />

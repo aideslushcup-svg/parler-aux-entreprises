@@ -1,11 +1,10 @@
 import { Star } from "lucide-react";
 import { LiquidButton } from "@/components/ui/liquid-glass-button";
-import { AuroraBackground } from "@/components/ui/aurora-background";
 import { motion } from "framer-motion";
 
 const HeroSection = () => {
   return (
-    <AuroraBackground className="pt-24 pb-16 dark">
+    <section className="relative z-10 pt-24 pb-16 min-h-screen flex items-center justify-center">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -14,7 +13,7 @@ const HeroSection = () => {
           duration: 0.8,
           ease: "easeInOut",
         }}
-        className="relative z-10 flex flex-col items-center text-center space-y-6 px-4"
+        className="flex flex-col items-center text-center space-y-6 px-4"
       >
         {/* Badge */}
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-pill bg-white/10 text-white/80 text-sm font-medium">
@@ -66,7 +65,7 @@ const HeroSection = () => {
           </div>
         </div>
       </motion.div>
-    </AuroraBackground>
+    </section>
   );
 };
 
