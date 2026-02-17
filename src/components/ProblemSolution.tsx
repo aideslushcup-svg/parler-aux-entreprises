@@ -1,4 +1,5 @@
-import { Card, CardContent } from "@/components/ui/card";
+import { CardContent } from "@/components/ui/card";
+import { GlowCard } from "@/components/ui/spotlight-card";
 import { Shield, Clock, PhoneOff, DollarSign, Zap } from "lucide-react";
 
 const ProblemSolution = () => {
@@ -26,7 +27,7 @@ const ProblemSolution = () => {
         <div className="relative">
           <div className="relative z-10 grid grid-cols-6 gap-3">
             {/* Card 1 — Big stat: appels manqués = argent perdu */}
-            <Card className="relative col-span-full flex overflow-hidden lg:col-span-2 border-white/10 bg-white/[0.03] backdrop-blur-sm">
+            <GlowCard customSize glowColor="blue" className="col-span-full flex overflow-hidden lg:col-span-2 bg-white/[0.03]">
               <CardContent className="relative m-auto size-fit pt-6">
                 <div className="relative flex h-24 w-56 items-center">
                   <svg
@@ -51,10 +52,10 @@ const ProblemSolution = () => {
                   des clients tombés sur une boîte vocale
                 </p>
               </CardContent>
-            </Card>
+            </GlowCard>
 
             {/* Card 2 — Économies */}
-            <Card className="relative col-span-full overflow-hidden sm:col-span-3 lg:col-span-2 border-white/10 bg-white/[0.03] backdrop-blur-sm">
+            <GlowCard customSize glowColor="blue" className="col-span-full overflow-hidden sm:col-span-3 lg:col-span-2 bg-white/[0.03]">
               <CardContent className="pt-6">
                 <div className="relative mx-auto flex aspect-square size-32 rounded-full border border-white/10 before:absolute before:-inset-2 before:rounded-full before:border before:border-white/5">
                   <DollarSign className="m-auto h-16 w-16 text-primary" strokeWidth={1.5} />
@@ -69,10 +70,10 @@ const ProblemSolution = () => {
                   </p>
                 </div>
               </CardContent>
-            </Card>
+            </GlowCard>
 
             {/* Card 3 — Temps de réponse */}
-            <Card className="relative col-span-full overflow-hidden sm:col-span-3 lg:col-span-2 border-white/10 bg-white/[0.03] backdrop-blur-sm">
+            <GlowCard customSize glowColor="blue" className="col-span-full overflow-hidden sm:col-span-3 lg:col-span-2 bg-white/[0.03]">
               <CardContent className="pt-6">
                 <div className="pt-6 lg:px-6 flex items-center justify-center">
                   <div className="relative">
@@ -97,10 +98,10 @@ const ProblemSolution = () => {
                   </p>
                 </div>
               </CardContent>
-            </Card>
+            </GlowCard>
 
             {/* Card 4 — 24/7 */}
-            <Card className="relative col-span-full overflow-hidden lg:col-span-3 border-white/10 bg-white/[0.03] backdrop-blur-sm">
+            <GlowCard customSize glowColor="blue" className="col-span-full overflow-hidden lg:col-span-3 bg-white/[0.03]">
               <CardContent className="grid pt-6 sm:grid-cols-2">
                 <div className="relative z-10 flex flex-col justify-between space-y-12 lg:space-y-6">
                   <div className="relative flex aspect-square size-12 rounded-full border border-white/10 before:absolute before:-inset-2 before:rounded-full before:border before:border-white/5">
@@ -141,10 +142,10 @@ const ProblemSolution = () => {
                   </div>
                 </div>
               </CardContent>
-            </Card>
+            </GlowCard>
 
             {/* Card 5 — Aucun engagement */}
-            <Card className="relative col-span-full overflow-hidden lg:col-span-3 border-white/10 bg-white/[0.03] backdrop-blur-sm">
+            <GlowCard customSize glowColor="blue" className="col-span-full overflow-hidden lg:col-span-3 bg-white/[0.03]">
               <CardContent className="grid pt-6 sm:grid-cols-2">
                 <div className="relative z-10 flex flex-col justify-between space-y-12 lg:space-y-6">
                   <div className="relative flex aspect-square size-12 rounded-full border border-white/10 before:absolute before:-inset-2 before:rounded-full before:border before:border-white/5">
@@ -194,7 +195,7 @@ const ProblemSolution = () => {
                   </div>
                 </div>
               </CardContent>
-            </Card>
+            </GlowCard>
           </div>
         </div>
 
