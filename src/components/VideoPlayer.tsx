@@ -1,4 +1,5 @@
 import { Play, Clock, Subtitles } from "lucide-react";
+import { BorderBeam } from "@/components/ui/border-beam";
 
 interface VideoPlayerProps {
   videoUrl?: string | null;
@@ -41,6 +42,14 @@ const VideoPlayer = ({ videoUrl = null }: VideoPlayerProps) => {
                 </div>
               </div>
             )}
+            <BorderBeam
+              size={250}
+              duration={12}
+              borderWidth={1.5}
+              colorFrom="#0066ff"
+              colorTo="#00ccff"
+              delay={0}
+            />
           </div>
 
           {/* Sub-text */}
