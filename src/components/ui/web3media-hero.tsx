@@ -11,7 +11,7 @@ export function Web3MediaHero({ className, children }: Web3MediaHeroProps) {
   return (
     <section
       className={cn(
-        "relative w-full flex flex-col overflow-hidden",
+        "relative w-full flex flex-col overflow-visible",
         className
       )}
       style={{

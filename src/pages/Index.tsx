@@ -13,8 +13,8 @@ const Index = () => {
     <>
       <Navbar />
       <main>
-        <HeroSection />
-        <VideoPlayer videoUrl={null} />
+        <HeroSection videoUrl={null} />
+        <VideoPlayer />
         <ProblemSolution />
         <HowItWorks />
         <PricingSection />
