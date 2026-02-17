@@ -15,26 +15,32 @@ const VideoPlayer = ({ videoUrl = null }: VideoPlayerProps) => {
   return (
     <section
       id="vsl"
-      className="pb-12 md:pb-16"
+      className="relative z-20 -mt-8 md:-mt-16 pb-16 md:pb-24"
       style={{
         background: "linear-gradient(180deg, #f0f4ff 0%, #e8efff 50%, #f0f4ff 100%)",
       }}
     >
-      <div className="max-w-[960px] mx-auto px-4">
-        {/* Video frame */}
-        <div className="relative">
+      <div className="max-w-[1100px] mx-auto px-4">
+        {/* Video frame — bigger */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="relative"
+        >
           {/* Glow */}
           <div
-            className="absolute -inset-4 rounded-[24px] pointer-events-none"
+            className="absolute -inset-6 rounded-[28px] pointer-events-none"
             style={{
               background:
-                "radial-gradient(ellipse at center, rgba(0,102,255,0.08) 0%, transparent 70%)",
+                "radial-gradient(ellipse at center, rgba(0,102,255,0.10) 0%, transparent 70%)",
             }}
           />
 
           <div className="relative rounded-[20px]">
             <div
-              className="overflow-hidden rounded-[20px] border border-black/10 shadow-xl"
+              className="overflow-hidden rounded-[20px] border border-black/10 shadow-2xl"
               style={{ background: "#fff" }}
             >
               {videoUrl ? (
@@ -55,9 +61,9 @@ const VideoPlayer = ({ videoUrl = null }: VideoPlayerProps) => {
                       "linear-gradient(135deg, #f8faff 0%, #e8efff 100%)",
                   }}
                 >
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full bg-primary flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 md:w-28 md:h-28 rounded-full bg-primary flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
                     <Play
-                      className="w-8 h-8 text-primary-foreground ml-1"
+                      className="w-10 h-10 md:w-12 md:h-12 text-primary-foreground ml-1"
                       fill="currentColor"
                     />
                   </div>
@@ -74,29 +80,38 @@ const VideoPlayer = ({ videoUrl = null }: VideoPlayerProps) => {
             />
           </div>
 
-          {/* Sub-text */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-4 text-muted-foreground text-sm">
+          {/* Sub-text — bigger */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-6 text-muted-foreground text-base">
             <span>
               Regardez comment Calendia répond à vos appels en moins de 3
               minutes
             </span>
             <div className="flex items-center gap-4">
-              <span className="flex items-center gap-1">
-                <Clock className="w-3.5 h-3.5" /> 2 min 47
+              <span className="flex items-center gap-1.5">
+                <Clock className="w-4 h-4" /> 2 min 47
               </span>
-              <span className="flex items-center gap-1">
-                <Subtitles className="w-3.5 h-3.5" /> Sous-titres disponibles
+              <span className="flex items-center gap-1.5">
+                <Subtitles className="w-4 h-4" /> Sous-titres disponibles
               </span>
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        {/* Brand slider — tight below video */}
-        <div className="mt-10 relative overflow-hidden">
-          <div className="text-center mb-4">
-            <span className="text-xs font-medium text-muted-foreground/60 tracking-widest uppercase">
+        {/* Brand slider — BIGGER trust section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mt-16 relative overflow-hidden"
+        >
+          <div className="text-center mb-8">
+            <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
               Ils nous font confiance
-            </span>
+            </h3>
+            <p className="text-base text-muted-foreground">
+              Des entreprises de toutes tailles au Québec
+            </p>
           </div>
 
           {/* Fade edges */}
@@ -104,20 +119,20 @@ const VideoPlayer = ({ videoUrl = null }: VideoPlayerProps) => {
             className="absolute left-0 top-0 bottom-0 z-10 pointer-events-none w-[80px]"
             style={{
               background:
-                "linear-gradient(90deg, #f0f4ff 0%, rgba(240, 244, 255, 0) 100%)",
+                "linear-gradient(90deg, #e8efff 0%, rgba(232, 239, 255, 0) 100%)",
             }}
           />
           <div
             className="absolute right-0 top-0 bottom-0 z-10 pointer-events-none w-[80px]"
             style={{
               background:
-                "linear-gradient(270deg, #f0f4ff 0%, rgba(240, 244, 255, 0) 100%)",
+                "linear-gradient(270deg, #e8efff 0%, rgba(232, 239, 255, 0) 100%)",
             }}
           />
 
           <motion.div
-            className="flex items-center gap-16 pl-16"
-            animate={{ x: [0, -(industries.length / 2) * 140] }}
+            className="flex items-center gap-20 pl-20"
+            animate={{ x: [0, -(industries.length / 2) * 160] }}
             transition={{
               x: {
                 repeat: Infinity,
@@ -130,13 +145,13 @@ const VideoPlayer = ({ videoUrl = null }: VideoPlayerProps) => {
             {industries.map((name, i) => (
               <span
                 key={i}
-                className="flex-shrink-0 text-sm font-semibold text-foreground/30 tracking-wide"
+                className="flex-shrink-0 text-xl md:text-2xl font-bold text-foreground/25 tracking-wide"
               >
                 {name}
               </span>
             ))}
           </motion.div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

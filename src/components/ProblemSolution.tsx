@@ -1,28 +1,35 @@
 import { CardContent } from "@/components/ui/card";
 import { GlowCard } from "@/components/ui/spotlight-card";
 import { Shield, Clock, PhoneOff, DollarSign, Zap } from "lucide-react";
+import { motion } from "framer-motion";
 
 const ProblemSolution = () => {
   return (
     <section
-      className="py-16 md:py-32"
+      className="py-20 md:py-32"
       style={{
         background:
           "linear-gradient(180deg, #071230 0%, #0a1628 50%, #020817 100%)",
       }}
     >
       <div className="mx-auto max-w-3xl lg:max-w-5xl px-6">
-        {/* Section header */}
-        <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight">
+        {/* Section header — scroll reveal */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12 md:mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight">
             Pourquoi choisir{" "}
             <span className="text-primary">Calendia</span> ?
           </h2>
-          <p className="mt-4 text-white/50 max-w-xl mx-auto">
+          <p className="mt-5 text-lg md:text-xl text-white/50 max-w-xl mx-auto">
             Chaque appel manqué, c'est un client perdu. Voici pourquoi 500+
             entreprises nous font confiance.
           </p>
-        </div>
+        </motion.div>
 
         <div className="relative">
           <div className="relative z-10 grid grid-cols-6 gap-3">

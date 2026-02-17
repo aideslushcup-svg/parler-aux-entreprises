@@ -1,7 +1,7 @@
 import { Settings, Phone, FileText } from "lucide-react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { LiquidButton } from "@/components/ui/liquid-glass-button";
-import { ShootingStars } from "@/components/ui/shooting-stars";
+import { motion } from "framer-motion";
 import { ReactNode } from "react";
 
 const CardDecorator = ({ children }: { children: ReactNode }) => (
@@ -9,8 +9,8 @@ const CardDecorator = ({ children }: { children: ReactNode }) => (
     aria-hidden
     className="relative mx-auto size-36 [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]"
   >
-    <div className="absolute inset-0 [--border:white] bg-[linear-gradient(to_right,var(--border)_1px,transparent_1px),linear-gradient(to_bottom,var(--border)_1px,transparent_1px)] bg-[size:24px_24px] opacity-10" />
-    <div className="absolute inset-0 m-auto flex size-12 items-center justify-center border-t border-l border-white/20 bg-white/5 text-primary">
+    <div className="absolute inset-0 [--border:hsl(var(--primary)/0.15)] bg-[linear-gradient(to_right,var(--border)_1px,transparent_1px),linear-gradient(to_bottom,var(--border)_1px,transparent_1px)] bg-[size:24px_24px] opacity-40" />
+    <div className="absolute inset-0 m-auto flex size-12 items-center justify-center border-t border-l border-primary/20 bg-primary/5 text-primary">
       {children}
     </div>
   </div>
@@ -41,10 +41,10 @@ const HowItWorks = () => {
   return (
     <section
       id="comment-ca-marche"
-      className="relative py-16 md:py-24 overflow-hidden"
+      className="relative py-20 md:py-32 overflow-hidden"
       style={{
         background:
-          "linear-gradient(135deg, #020817 0%, #0a1628 40%, #071230 100%)",
+          "linear-gradient(180deg, #f0f4ff 0%, #e8efff 50%, #f0f4ff 100%)",
       }}
     >
       {/* Subtle glow accents */}
@@ -52,76 +52,75 @@ const HowItWorks = () => {
         className="absolute top-0 left-1/4 w-96 h-96 pointer-events-none"
         style={{
           background:
-            "radial-gradient(circle, rgba(0,102,255,0.08) 0%, transparent 70%)",
+            "radial-gradient(circle, rgba(0,102,255,0.06) 0%, transparent 70%)",
         }}
       />
       <div
         className="absolute bottom-0 right-1/4 w-96 h-96 pointer-events-none"
         style={{
           background:
-            "radial-gradient(circle, rgba(0,102,255,0.06) 0%, transparent 70%)",
+            "radial-gradient(circle, rgba(0,102,255,0.04) 0%, transparent 70%)",
         }}
       />
 
-      {/* Shooting stars background */}
-      <ShootingStars
-        starColor="#0066ff"
-        trailColor="#00ccff"
-        minSpeed={10}
-        maxSpeed={25}
-        minDelay={1500}
-        maxDelay={4000}
-        className="pointer-events-none"
-      />
-      <ShootingStars
-        starColor="#3b82f6"
-        trailColor="#8b5cf6"
-        minSpeed={8}
-        maxSpeed={20}
-        minDelay={2000}
-        maxDelay={5000}
-        className="pointer-events-none"
-      />
-
       <div className="relative z-10 mx-auto max-w-5xl px-4 md:px-6">
-        {/* Header */}
-        <div className="text-center">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-white tracking-tight">
+        {/* Header — BIGGER */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center"
+        >
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-tight">
             Comment ça <span className="text-primary">marche</span>
           </h2>
-          <p className="mt-4 text-white/50">
+          <p className="mt-5 text-lg md:text-xl text-muted-foreground">
             Trois étapes. On s'occupe de tout.
           </p>
-        </div>
+        </motion.div>
 
-        {/* Cards */}
-        <div className="mx-auto mt-10 md:mt-16 grid max-w-sm md:max-w-full grid-cols-1 md:grid-cols-3 gap-6 *:text-center">
+        {/* Cards — scroll animation one by one */}
+        <div className="mx-auto mt-12 md:mt-20 grid max-w-sm md:max-w-full grid-cols-1 md:grid-cols-3 gap-8 *:text-center">
           {steps.map((step, index) => (
-            <Card
+            <motion.div
               key={index}
-              className="group border-0 bg-white/[0.03] shadow-none backdrop-blur-sm hover:bg-white/[0.06] transition-all duration-300"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.15 }}
             >
-              <CardHeader className="pb-3">
-                <CardDecorator>{step.icon}</CardDecorator>
-                <h3 className="mt-6 font-medium text-white text-lg">
-                  {step.title}
-                </h3>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-white/50 leading-relaxed">
-                  {step.description}
-                </p>
-              </CardContent>
-            </Card>
+              <Card className="group border border-primary/10 bg-white/80 backdrop-blur-sm shadow-sm hover:shadow-xl hover:border-primary/20 transition-all duration-300 h-full">
+                <CardHeader className="pb-3">
+                  <CardDecorator>{step.icon}</CardDecorator>
+                  <h3 className="mt-6 font-semibold text-foreground text-xl md:text-2xl">
+                    {step.title}
+                  </h3>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-base text-muted-foreground leading-relaxed">
+                    {step.description}
+                  </p>
+                </CardContent>
+              </Card>
+            </motion.div>
           ))}
         </div>
 
-        {/* CTA */}
-        <div className="text-center mt-12">
+        {/* CTA — bigger */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="text-center mt-14"
+        >
           <a href="#cta-final">
-            <LiquidButton size="lg">Réserver un appel découverte</LiquidButton>
+            <LiquidButton size="lg" className="text-lg px-10 py-5 h-auto font-bold">
+              Réserver un appel découverte
+            </LiquidButton>
           </a>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
