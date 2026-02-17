@@ -1,122 +1,102 @@
 import { Settings, Phone, FileText } from "lucide-react";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { LiquidButton } from "@/components/ui/liquid-glass-button";
+import { ReactNode } from "react";
 
-interface StepCardProps {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-  benefits: string[];
-}
-
-const StepCard = ({ icon, title, description, benefits }: StepCardProps) => (
-  <div className="relative rounded-2xl border border-white/10 bg-white/5 p-6 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:border-primary/40 hover:bg-white/10">
-    {/* Icon */}
-    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/20 text-primary">
-      {icon}
+const CardDecorator = ({ children }: { children: ReactNode }) => (
+  <div
+    aria-hidden
+    className="relative mx-auto size-36 [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]"
+  >
+    <div className="absolute inset-0 [--border:white] bg-[linear-gradient(to_right,var(--border)_1px,transparent_1px),linear-gradient(to_bottom,var(--border)_1px,transparent_1px)] bg-[size:24px_24px] opacity-10" />
+    <div className="absolute inset-0 m-auto flex size-12 items-center justify-center border-t border-l border-white/20 bg-white/5 text-primary">
+      {children}
     </div>
-    {/* Title and Description */}
-    <h3 className="mb-2 text-xl font-semibold text-white">{title}</h3>
-    <p className="mb-6 text-white/60">{description}</p>
-    {/* Benefits List */}
-    <ul className="space-y-3">
-      {benefits.map((benefit, index) => (
-        <li key={index} className="flex items-center gap-3">
-          <div className="flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-primary/20">
-            <div className="h-2 w-2 rounded-full bg-primary" />
-          </div>
-          <span className="text-white/70 text-sm">{benefit}</span>
-        </li>
-      ))}
-    </ul>
   </div>
 );
 
 const steps = [
   {
-    icon: <Settings className="h-6 w-6" />,
+    icon: <Settings className="size-6" />,
     title: "On configure tout pour vous",
     description:
-      "Un appel d'onboarding pour bien comprendre votre entreprise, puis on construit et installe votre assistant vocal sur mesure.",
-    benefits: [
-      "Appel découverte pour analyser vos besoins",
-      "On programme les réponses à vos questions fréquentes",
-      "On connecte votre calendrier et votre CRM",
-      "Installation complète en 1 à 3 semaines",
-    ],
+      "Un appel d'onboarding pour comprendre votre entreprise, puis on construit et installe votre assistant vocal sur mesure. Prêt en 1 à 3 semaines.",
   },
   {
-    icon: <Phone className="h-6 w-6" />,
+    icon: <Phone className="size-6" />,
     title: "Il répond à vos appels 24/7",
     description:
-      "Votre assistant décroche chaque appel avec le ton de votre entreprise. Il qualifie, prend les rendez-vous et redirige quand nécessaire.",
-    benefits: [
-      "Prend les rendez-vous directement dans votre calendrier",
-      "Qualifie les leads selon vos critères",
-      "Gère les appels simultanés sans limite",
-      "Transfère les urgences à votre équipe",
-    ],
+      "Votre assistant décroche chaque appel avec le ton de votre entreprise. Il qualifie les leads, prend les rendez-vous et transfère les urgences.",
   },
   {
-    icon: <FileText className="h-6 w-6" />,
+    icon: <FileText className="size-6" />,
     title: "Vous gardez le contrôle total",
     description:
-      "Chaque appel est résumé et envoyé en temps réel par courriel et dans votre CRM. Besoin d'un ajustement? On s'en occupe.",
-    benefits: [
-      "Résumé détaillé de chaque appel par courriel",
-      "Fiche d'appel automatique dans votre CRM",
-      "On ajuste le comportement de l'assistant pour vous sur demande",
-      "Aucun engagement — annulez quand vous voulez",
-    ],
+      "Résumé par courriel et fiche CRM après chaque appel. Besoin d'un ajustement? On s'en occupe. Aucun engagement.",
   },
 ];
 
 const HowItWorks = () => {
   return (
-    <section id="comment-ca-marche" className="section-padding bg-navy text-navy-foreground">
-      <div className="container-narrow">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-h2 font-bold mb-4">
+    <section
+      id="comment-ca-marche"
+      className="relative py-16 md:py-24 overflow-hidden"
+      style={{
+        background:
+          "linear-gradient(135deg, #020817 0%, #0a1628 40%, #071230 100%)",
+      }}
+    >
+      {/* Subtle glow accents */}
+      <div
+        className="absolute top-0 left-1/4 w-96 h-96 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(0,102,255,0.08) 0%, transparent 70%)",
+        }}
+      />
+      <div
+        className="absolute bottom-0 right-1/4 w-96 h-96 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(0,102,255,0.06) 0%, transparent 70%)",
+        }}
+      />
+
+      <div className="relative z-10 mx-auto max-w-5xl px-4 md:px-6">
+        {/* Header */}
+        <div className="text-center">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-white tracking-tight">
             Comment ça <span className="text-primary">marche</span>
           </h2>
-          <p className="text-body-lg text-white/70">
+          <p className="mt-4 text-white/50">
             Trois étapes. On s'occupe de tout.
           </p>
         </div>
 
-        {/* Step Indicators with Connecting Line */}
-        <div className="relative mx-auto mb-8 w-full max-w-4xl">
-          <div
-            aria-hidden="true"
-            className="absolute left-[16.6667%] top-1/2 h-0.5 w-[66.6667%] -translate-y-1/2 bg-white/20"
-          />
-          <div className="relative grid grid-cols-3">
-            {steps.map((_, index) => (
-              <div
-                key={index}
-                className="flex h-8 w-8 items-center justify-center justify-self-center rounded-full bg-white/10 font-semibold text-white ring-4 ring-[hsl(var(--navy))]"
-              >
-                {index + 1}
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Steps Grid */}
-        <div className="mx-auto grid max-w-4xl grid-cols-1 gap-8 md:grid-cols-3">
+        {/* Cards */}
+        <div className="mx-auto mt-10 md:mt-16 grid max-w-sm md:max-w-full grid-cols-1 md:grid-cols-3 gap-6 *:text-center">
           {steps.map((step, index) => (
-            <StepCard
+            <Card
               key={index}
-              icon={step.icon}
-              title={step.title}
-              description={step.description}
-              benefits={step.benefits}
-            />
+              className="group border-0 bg-white/[0.03] shadow-none backdrop-blur-sm hover:bg-white/[0.06] transition-all duration-300"
+            >
+              <CardHeader className="pb-3">
+                <CardDecorator>{step.icon}</CardDecorator>
+                <h3 className="mt-6 font-medium text-white text-lg">
+                  {step.title}
+                </h3>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-white/50 leading-relaxed">
+                  {step.description}
+                </p>
+              </CardContent>
+            </Card>
           ))}
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-14">
+        <div className="text-center mt-12">
           <a href="#cta-final">
             <LiquidButton size="lg">Réserver un appel découverte</LiquidButton>
           </a>

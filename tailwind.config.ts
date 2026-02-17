@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Poppins", "sans-serif"],
+        sans: ["Space Grotesk", "sans-serif"],
       },
       fontSize: {
         "display": ["72px", { lineHeight: "1.1", fontWeight: "700" }],
