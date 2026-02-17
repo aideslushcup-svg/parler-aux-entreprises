@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/neon-button";
+import { LiquidButton } from "@/components/ui/liquid-glass-button";
 
 const footerLinks = {
   Produit: [
@@ -31,7 +31,7 @@ const FooterSection = () => {
             comment Calendia peut s'adapter à votre entreprise.
           </p>
           <a href="#">
-            <Button variant="solid" size="xl">Réserver mon appel gratuit</Button>
+            <LiquidButton size="xl">Réserver mon appel gratuit</LiquidButton>
           </a>
           <p className="text-sm text-white/50 mt-4">
             Configuration en moins de 48h. Sans engagement. Phase pilote incluse.

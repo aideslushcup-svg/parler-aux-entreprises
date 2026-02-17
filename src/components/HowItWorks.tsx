@@ -1,5 +1,5 @@
 import { Settings, Phone, FileText } from "lucide-react";
-import { Button } from "@/components/ui/neon-button";
+import { LiquidButton } from "@/components/ui/liquid-glass-button";
 
 const steps = [
   {
@@ -56,7 +56,7 @@ const HowItWorks = () => {
 
         <div className="text-center mt-14">
           <a href="#cta-final">
-            <Button variant="solid" size="lg">Réserver un appel découverte</Button>
+            <LiquidButton size="lg">Réserver un appel découverte</LiquidButton>
           </a>
         </div>
       </div>

@@ -1,5 +1,5 @@
 import { X, Check } from "lucide-react";
-import { Button } from "@/components/ui/neon-button";
+import { LiquidButton } from "@/components/ui/liquid-glass-button";
 
 const tradFeatures = [
   "Disponible 9h à 17h seulement",
@@ -68,7 +68,7 @@ const PricingSection = () => {
 
         <div className="text-center mt-10">
           <a href="#cta-final">
-            <Button variant="solid" size="lg">Réserver un appel découverte</Button>
+            <LiquidButton size="lg">Réserver un appel découverte</LiquidButton>
           </a>
         </div>
       </div>
