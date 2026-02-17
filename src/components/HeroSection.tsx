@@ -1,5 +1,6 @@
 import { Star } from "lucide-react";
 import { LiquidButton } from "@/components/ui/liquid-glass-button";
+import { HeroHighlight } from "@/components/ui/hero-highlight";
 
 const FloatingCard = ({
   children,
@@ -17,13 +18,13 @@ const FloatingCard = ({
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden dot-grid-bg">
+    <HeroHighlight containerClassName="min-h-screen pt-24 pb-16 overflow-hidden bg-background">
       {/* Subtle blue glow */}
-      <div className="absolute inset-0 pointer-events-none" style={{
+      <div className="absolute inset-0 pointer-events-none z-10" style={{
         background: "radial-gradient(circle at 50% 40%, rgba(0,102,255,0.05) 0%, transparent 60%)"
       }} />
 
-      <div className="container-narrow relative z-10 text-center">
+      <div className="container-narrow relative z-20 text-center">
         {/* Badge */}
         <div className="hero-stagger-1 inline-flex items-center gap-2 px-4 py-1.5 rounded-pill bg-secondary text-secondary-foreground text-sm font-medium mb-6">
           <span className="w-2 h-2 rounded-full bg-primary" />
@@ -113,7 +114,7 @@ const HeroSection = () => {
         <div className="w-2.5 h-2.5 rounded-full bg-success animate-pulse-glow" />
         <span className="text-foreground text-xs font-semibold">Assistant actif 24/7</span>
       </FloatingCard>
-    </section>
+    </HeroHighlight>
   );
 };
 

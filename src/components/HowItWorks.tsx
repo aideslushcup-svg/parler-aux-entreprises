@@ -1,6 +1,7 @@
 import { Settings, Phone, FileText } from "lucide-react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { LiquidButton } from "@/components/ui/liquid-glass-button";
+import { ShootingStars } from "@/components/ui/shooting-stars";
 import { ReactNode } from "react";
 
 const CardDecorator = ({ children }: { children: ReactNode }) => (
@@ -60,6 +61,26 @@ const HowItWorks = () => {
           background:
             "radial-gradient(circle, rgba(0,102,255,0.06) 0%, transparent 70%)",
         }}
+      />
+
+      {/* Shooting stars background */}
+      <ShootingStars
+        starColor="#0066ff"
+        trailColor="#00ccff"
+        minSpeed={10}
+        maxSpeed={25}
+        minDelay={1500}
+        maxDelay={4000}
+        className="pointer-events-none"
+      />
+      <ShootingStars
+        starColor="#3b82f6"
+        trailColor="#8b5cf6"
+        minSpeed={8}
+        maxSpeed={20}
+        minDelay={2000}
+        maxDelay={5000}
+        className="pointer-events-none"
       />
 
       <div className="relative z-10 mx-auto max-w-5xl px-4 md:px-6">
