@@ -1,5 +1,5 @@
 import { Star } from "lucide-react";
-import { Button } from "@/components/ui/neon-button";
+import { LiquidButton } from "@/components/ui/liquid-glass-button";
 
 const FloatingCard = ({
   children,
@@ -46,10 +46,10 @@ const HeroSection = () => {
         {/* Buttons */}
         <div className="hero-stagger-4 flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
           <a href="#cta-final">
-            <Button variant="solid" size="lg">Réserver un appel</Button>
+            <LiquidButton size="lg">Réserver un appel</LiquidButton>
           </a>
           <a href="#vsl">
-            <Button variant="outline" size="lg" neon={false}>Regarder la démo</Button>
+            <LiquidButton variant="outline" size="lg">Regarder la démo</LiquidButton>
           </a>
         </div>
 

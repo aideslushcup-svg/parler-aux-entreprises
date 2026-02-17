@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/neon-button";
+import { LiquidButton } from "@/components/ui/liquid-glass-button";
 
 const navLinks = [
   { label: "Comment ça marche", href: "#comment-ca-marche" },
@@ -47,7 +47,7 @@ const Navbar = () => {
 
         {/* Desktop CTA */}
         <a href="#cta-final" className="hidden md:inline-flex">
-          <Button variant="solid" size="default">Réserver un appel</Button>
+          <LiquidButton size="default">Réserver un appel</LiquidButton>
         </a>
 
         {/* Mobile hamburger */}
@@ -81,7 +81,7 @@ const Navbar = () => {
             </a>
           ))}
           <a href="#cta-final" onClick={() => setMenuOpen(false)}>
-            <Button variant="solid" size="lg">Réserver un appel</Button>
+            <LiquidButton size="lg">Réserver un appel</LiquidButton>
           </a>
         </div>
       )}
