@@ -15,33 +15,35 @@ const VideoPlayer = ({ videoUrl = null }: VideoPlayerProps) => {
             background: "radial-gradient(ellipse at center, rgba(0,102,255,0.15) 0%, transparent 70%)"
           }} />
 
-          {/* Video frame */}
-          <div className="relative rounded-[20px] overflow-hidden border border-white/15 backdrop-blur-xl"
-            style={{ background: "rgba(255,255,255,0.08)" }}
-          >
-            {videoUrl ? (
-              <div className="aspect-video">
-                <iframe
-                  src={videoUrl}
-                  className="w-full h-full"
-                  allow="autoplay; fullscreen"
-                  allowFullScreen
-                  title="Calendia Pro Demo"
-                />
-              </div>
-            ) : (
-              <div
-                className="aspect-video relative flex items-center justify-center cursor-pointer group"
-                style={{
-                  background: "linear-gradient(135deg, #021c3b 0%, #0a1628 100%)",
-                }}
-              >
-                {/* Play button */}
-                <div className="absolute top-1/2 left-1/2 animate-play-pulse w-20 h-20 rounded-full bg-primary flex items-center justify-center shadow-vsl-glow group-hover:scale-110 transition-transform">
-                  <Play className="w-8 h-8 text-primary-foreground ml-1" fill="currentColor" />
+          {/* Video frame wrapper */}
+          <div className="relative rounded-[20px]">
+            <div className="overflow-hidden rounded-[20px] border border-white/15 backdrop-blur-xl"
+              style={{ background: "rgba(255,255,255,0.08)" }}
+            >
+              {videoUrl ? (
+                <div className="aspect-video">
+                  <iframe
+                    src={videoUrl}
+                    className="w-full h-full"
+                    allow="autoplay; fullscreen"
+                    allowFullScreen
+                    title="Calendia Pro Demo"
+                  />
                 </div>
-              </div>
-            )}
+              ) : (
+                <div
+                  className="aspect-video relative flex items-center justify-center cursor-pointer group"
+                  style={{
+                    background: "linear-gradient(135deg, #021c3b 0%, #0a1628 100%)",
+                  }}
+                >
+                  {/* Play button */}
+                  <div className="absolute top-1/2 left-1/2 animate-play-pulse w-20 h-20 rounded-full bg-primary flex items-center justify-center shadow-vsl-glow group-hover:scale-110 transition-transform">
+                    <Play className="w-8 h-8 text-primary-foreground ml-1" fill="currentColor" />
+                  </div>
+                </div>
+              )}
+            </div>
             <BorderBeam
               size={250}
               duration={12}
