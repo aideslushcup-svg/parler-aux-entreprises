@@ -26,14 +26,14 @@ const FooterSection = () => {
           <h2 className="text-2xl md:text-4xl font-bold mb-4 text-foreground">
             Prêt à ne plus jamais manquer un appel?
           </h2>
-          <p className="text-body-lg text-muted-foreground mb-8">
+          <p className="text-body-lg text-foreground/80 mb-8">
             Réservez un appel découverte gratuit de 15 minutes. On vous montre exactement
             comment Calendia peut s'adapter à votre entreprise.
           </p>
           <a href="#">
             <LiquidButton size="xl">Réserver mon appel gratuit</LiquidButton>
           </a>
-          <p className="text-sm text-muted-foreground/70 mt-4">
+          <p className="text-sm text-foreground/60 mt-4">
             Un appel découverte, puis on s'occupe de tout. Prêt en 1 à 3 semaines. Sans engagement.
           </p>
         </div>
