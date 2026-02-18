@@ -42,13 +42,13 @@ const PricingSection = () => {
           >
             <GradientCard className="h-full">
               <div className="p-10 md:p-12">
-                <h3 className="text-xl font-semibold text-white/70 mb-2">Réceptionniste traditionnelle</h3>
-                <div className="text-3xl font-bold text-white/70 mb-1">45 000$ – 60 000$/an</div>
-                <p className="text-sm text-white/50 mb-6">3 750$ – 5 000$/mois</p>
+                <h3 className="text-xl font-semibold text-foreground/80 mb-2">Réceptionniste traditionnelle</h3>
+                <div className="text-3xl font-bold text-foreground/80 mb-1">45 000$ – 60 000$/an</div>
+                <p className="text-sm text-foreground/60 mb-6">3 750$ – 5 000$/mois</p>
                 <ul className="space-y-3">
                   {tradFeatures.map((f, i) => (
-                    <li key={i} className="flex items-start gap-3 text-white/60 text-sm">
-                      <X className="w-4 h-4 text-white/40 shrink-0 mt-0.5" />
+                    <li key={i} className="flex items-start gap-3 text-foreground/70 text-sm">
+                      <X className="w-4 h-4 text-foreground/40 shrink-0 mt-0.5" />
                       {f}
                     </li>
                   ))}
@@ -69,18 +69,18 @@ const PricingSection = () => {
                 <span className="absolute top-4 right-6 px-3 py-1 bg-primary text-primary-foreground text-xs font-semibold rounded-full">
                   Recommandé
                 </span>
-                <h3 className="text-xl font-semibold text-white mb-2">Calendia Pro</h3>
+                <h3 className="text-xl font-semibold text-foreground mb-2">Calendia Pro</h3>
                 <div className="text-3xl font-bold text-primary mb-1">À partir de 99$/mois</div>
-                <p className="text-sm text-white/50 mb-6">+ 0,85$/minute d'utilisation</p>
+                <p className="text-sm text-foreground/60 mb-6">+ 0,85$/minute d'utilisation</p>
                 <ul className="space-y-3">
                   {proFeatures.map((f, i) => (
-                    <li key={i} className="flex items-start gap-3 text-white/90 text-sm">
-                      <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                    <li key={i} className="flex items-start gap-3 text-foreground text-sm">
+                      <Check className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
                       {f}
                     </li>
                   ))}
                 </ul>
-                <p className="text-xs text-white/40 mt-4">0 appels = 0$ de frais d'utilisation</p>
+                <p className="text-xs text-foreground/50 mt-4">0 appels = 0$ de frais d'utilisation</p>
               </div>
             </GradientCard>
           </motion.div>

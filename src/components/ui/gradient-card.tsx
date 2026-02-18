@@ -39,18 +39,18 @@ export function GradientCard({
 
   const glowColors = glowColor === "purple"
     ? {
-        radial1: "rgba(172, 92, 255, 0.3)",
-        radial2: "rgba(56, 189, 248, 0.3)",
-        center: "rgba(161, 58, 229, 0.3)",
-        border: "rgba(172, 92, 255, 0.5)",
-        shadow: "rgba(172, 92, 255, 0.1)",
+        radial1: "rgba(172, 92, 255, 0.2)",
+        radial2: "rgba(56, 189, 248, 0.2)",
+        center: "rgba(161, 58, 229, 0.2)",
+        border: "rgba(172, 92, 255, 0.4)",
+        shadow: "rgba(172, 92, 255, 0.08)",
       }
     : {
-        radial1: "rgba(30, 144, 255, 0.25)",
-        radial2: "rgba(0, 102, 255, 0.25)",
-        center: "rgba(0, 102, 255, 0.25)",
-        border: "rgba(30, 144, 255, 0.5)",
-        shadow: "rgba(30, 144, 255, 0.1)",
+        radial1: "rgba(30, 144, 255, 0.2)",
+        radial2: "rgba(0, 102, 255, 0.2)",
+        center: "rgba(0, 102, 255, 0.2)",
+        border: "rgba(30, 144, 255, 0.4)",
+        shadow: "rgba(30, 144, 255, 0.08)",
       };
 
   // Thin border variant for map/media
@@ -90,8 +90,7 @@ export function GradientCard({
       className={cn("relative rounded-2xl overflow-hidden", className)}
       style={{
         transformStyle: "preserve-3d",
-        backgroundColor: "#1e2a3a",
-        boxShadow: `0 4px 30px 2px ${glowColors.shadow}, 0 0 6px 0 rgba(0, 0, 0, 0.15)`,
+        boxShadow: `0 4px 30px 2px ${glowColors.shadow}, 0 1px 4px 0 rgba(0, 0, 0, 0.06)`,
       }}
       initial={{ y: 0 }}
       animate={{
@@ -113,27 +112,27 @@ export function GradientCard({
         className="absolute inset-0 z-[35] pointer-events-none"
         style={{
           background:
-            "linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 40%, rgba(255,255,255,0) 80%, rgba(255,255,255,0.06) 100%)",
+            "linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 40%, rgba(255,255,255,0) 80%, rgba(255,255,255,0.2) 100%)",
         }}
-        animate={{ opacity: isHovered ? 0.8 : 0.6 }}
+        animate={{ opacity: isHovered ? 0.9 : 0.7 }}
         transition={{ duration: 0.4, ease: "easeOut" }}
       />
 
-      {/* Background gradient — softer navy */}
+      {/* Background gradient — icy blue */}
       <div
         className="absolute inset-0 z-0"
-        style={{ background: "linear-gradient(180deg, #1e2a3a 0%, #152030 100%)" }}
+        style={{ background: "linear-gradient(180deg, #dce8f8 0%, #c8daf0 100%)" }}
       />
 
-      {/* Noise texture */}
+      {/* Noise texture — very subtle on light bg */}
       <div
-        className="absolute inset-0 opacity-10 mix-blend-overlay z-10"
+        className="absolute inset-0 opacity-[0.04] mix-blend-overlay z-10"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
         }}
       />
 
-      {/* Bottom glow — subtler */}
+      {/* Bottom glow — subtle blue tint */}
       <motion.div
         className="absolute bottom-0 left-0 right-0 h-2/3 z-20"
         style={{
@@ -158,7 +157,7 @@ export function GradientCard({
           filter: "blur(45px)",
         }}
         animate={{
-          opacity: isHovered ? 0.7 : 0.4,
+          opacity: isHovered ? 0.6 : 0.3,
           y: isHovered ? `calc(10% + ${rotation.x * 0.3}px)` : "10%",
         }}
         transition={{ duration: 0.4, ease: "easeOut" }}
@@ -168,13 +167,13 @@ export function GradientCard({
       <motion.div
         className="absolute bottom-0 left-0 right-0 h-[1px] z-[25]"
         style={{
-          background: `linear-gradient(90deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0.03) 100%)`,
+          background: `linear-gradient(90deg, rgba(30,144,255,0.05) 0%, rgba(30,144,255,0.35) 50%, rgba(30,144,255,0.05) 100%)`,
         }}
         animate={{
           boxShadow: isHovered
             ? `0 0 10px 2px ${glowColors.border}`
             : `0 0 6px 1px ${glowColors.border}`,
-          opacity: isHovered ? 0.9 : 0.6,
+          opacity: isHovered ? 0.9 : 0.5,
         }}
         transition={{ duration: 0.4, ease: "easeOut" }}
       />
@@ -183,13 +182,13 @@ export function GradientCard({
       <motion.div
         className="absolute bottom-0 left-0 h-1/5 w-[1px] z-[25] rounded-full"
         style={{
-          background: "linear-gradient(to top, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0) 100%)",
+          background: "linear-gradient(to top, rgba(30,144,255,0.35) 0%, rgba(30,144,255,0.15) 50%, rgba(30,144,255,0) 100%)",
         }}
         animate={{
           boxShadow: isHovered
             ? `0 0 8px 2px ${glowColors.border}`
             : `0 0 5px 1px ${glowColors.border}`,
-          opacity: isHovered ? 0.8 : 0.5,
+          opacity: isHovered ? 0.8 : 0.4,
         }}
         transition={{ duration: 0.4, ease: "easeOut" }}
       />
@@ -198,13 +197,13 @@ export function GradientCard({
       <motion.div
         className="absolute bottom-0 right-0 h-1/5 w-[1px] z-[25] rounded-full"
         style={{
-          background: "linear-gradient(to top, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0) 100%)",
+          background: "linear-gradient(to top, rgba(30,144,255,0.35) 0%, rgba(30,144,255,0.15) 50%, rgba(30,144,255,0) 100%)",
         }}
         animate={{
           boxShadow: isHovered
             ? `0 0 8px 2px ${glowColors.border}`
             : `0 0 5px 1px ${glowColors.border}`,
-          opacity: isHovered ? 0.8 : 0.5,
+          opacity: isHovered ? 0.8 : 0.4,
         }}
         transition={{ duration: 0.4, ease: "easeOut" }}
       />

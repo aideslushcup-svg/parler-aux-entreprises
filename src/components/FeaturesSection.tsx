@@ -55,21 +55,21 @@ export default function FeaturesSection() {
             <GradientCard className="h-full">
               <div className="p-8">
                 <Settings className="text-primary size-6" />
-                <h3 className="text-white mt-5 text-xl font-semibold">
+                <h3 className="text-foreground mt-5 text-xl font-semibold">
                   Configuration sur mesure
                 </h3>
-                <p className="text-white/70 mt-3 text-balance">
+                <p className="text-foreground/70 mt-3 text-balance">
                   Un appel d'onboarding pour comprendre votre entreprise, puis on
                   construit votre assistant vocal personnalisé. Prêt en 1 à 3
                   semaines.
                 </p>
 
-                <div className="mt-9 aspect-video rounded-xl p-4 bg-white/5 border border-white/10">
-                  <div className="mb-0.5 text-sm font-semibold text-white">
+                <div className="mt-9 aspect-video rounded-xl p-4 bg-white/50 border border-foreground/10">
+                  <div className="mb-0.5 text-sm font-semibold text-foreground">
                     Appel d'onboarding
                   </div>
                   <div className="mb-4 flex gap-2 text-sm">
-                    <span className="text-white/50">
+                    <span className="text-foreground/50">
                       Configuration personnalisée
                     </span>
                   </div>
@@ -80,13 +80,13 @@ export default function FeaturesSection() {
                     ].map((item, i) => (
                       <div
                         key={i}
-                        className={`${item.bg} size-7 rounded-full border border-white/20 flex items-center justify-center text-white text-[10px] font-bold`}
+                        className={`${item.bg} size-7 rounded-full border border-white/50 flex items-center justify-center text-white text-[10px] font-bold`}
                       >
                         {item.initials}
                       </div>
                     ))}
                   </div>
-                  <div className="text-white/50 text-sm font-medium">
+                  <div className="text-foreground/50 text-sm font-medium">
                     Ton, vocabulaire, scénarios
                   </div>
                 </div>
@@ -104,37 +104,37 @@ export default function FeaturesSection() {
             <GradientCard className="h-full">
               <div className="group px-8 pt-8 h-full">
                 <PhoneIncoming className="text-primary size-6" />
-                <h3 className="text-white mt-5 text-xl font-semibold">
+                <h3 className="text-foreground mt-5 text-xl font-semibold">
                   Réponse intelligente 24/7
                 </h3>
-                <p className="text-white/70 mt-3 text-balance">
+                <p className="text-foreground/70 mt-3 text-balance">
                   Votre assistant décroche chaque appel avec le ton de votre
                   entreprise. Il qualifie les leads, prend les rendez-vous et
                   transfère les urgences.
                 </p>
 
                 <div aria-hidden className="relative mt-6">
-                  <div className="aspect-video w-4/5 translate-y-4 rounded-xl p-3 transition-transform duration-200 ease-in-out group-hover:-rotate-3 bg-white/5 border border-white/10">
+                  <div className="aspect-video w-4/5 translate-y-4 rounded-xl p-3 transition-transform duration-200 ease-in-out group-hover:-rotate-3 bg-white/50 border border-foreground/10">
                     <div className="mb-3 flex items-center gap-2">
                       <div className="bg-emerald-500 size-6 rounded-full flex items-center justify-center">
                         <Phone className="size-3 text-white" />
                       </div>
-                      <span className="text-white/50 text-sm font-medium">
+                      <span className="text-foreground/50 text-sm font-medium">
                         Appel entrant
                       </span>
-                      <span className="text-white/30 text-xs">
+                      <span className="text-foreground/30 text-xs">
                         Maintenant
                       </span>
                     </div>
                     <div className="ml-8 space-y-2">
-                      <div className="bg-white/10 h-2 rounded-full" />
-                      <div className="bg-white/10 h-2 w-3/5 rounded-full" />
-                      <div className="bg-white/10 h-2 w-1/2 rounded-full" />
+                      <div className="bg-foreground/10 h-2 rounded-full" />
+                      <div className="bg-foreground/10 h-2 w-3/5 rounded-full" />
+                      <div className="bg-foreground/10 h-2 w-1/2 rounded-full" />
                     </div>
                     <UserCheck className="ml-8 mt-3 size-5 text-primary" />
                   </div>
-                  <div className="aspect-3/5 absolute -top-4 right-0 flex w-2/5 translate-y-4 rounded-xl p-2 transition-transform duration-200 ease-in-out group-hover:rotate-3 bg-white/5 border border-white/10">
-                    <div className="m-auto flex size-10 rounded-full bg-primary/20">
+                  <div className="aspect-3/5 absolute -top-4 right-0 flex w-2/5 translate-y-4 rounded-xl p-2 transition-transform duration-200 ease-in-out group-hover:rotate-3 bg-white/50 border border-foreground/10">
+                    <div className="m-auto flex size-10 rounded-full bg-primary/15">
                       <CalendarCheck className="m-auto size-4 text-primary" />
                     </div>
                   </div>
@@ -153,10 +153,10 @@ export default function FeaturesSection() {
             <GradientCard className="h-full">
               <div className="group px-8 pt-8 h-full">
                 <Headphones className="text-primary size-6" />
-                <h3 className="text-white mt-5 text-xl font-semibold">
+                <h3 className="text-foreground mt-5 text-xl font-semibold">
                   Contrôle total et résumés
                 </h3>
-                <p className="text-white/70 mt-3 text-balance">
+                <p className="text-foreground/70 mt-3 text-balance">
                   Résumé par courriel et fiche CRM après chaque appel. Besoin d'un
                   ajustement? On s'en occupe. Aucun engagement.
                 </p>
@@ -164,26 +164,26 @@ export default function FeaturesSection() {
                 <div className="mask-b-from-50 -mx-2 -mt-2 px-2 pt-2">
                   <div
                     aria-hidden
-                    className="mt-6 aspect-video translate-y-4 rounded-xl p-4 pb-6 transition-transform duration-200 group-hover:translate-y-0 bg-white/5 border border-white/10"
+                    className="mt-6 aspect-video translate-y-4 rounded-xl p-4 pb-6 transition-transform duration-200 group-hover:translate-y-0 bg-white/50 border border-foreground/10"
                   >
                     <div className="w-fit">
                       <Sparkles className="size-3.5 fill-primary/50 stroke-primary" />
-                      <p className="mt-2 line-clamp-2 text-sm text-white/70">
+                      <p className="mt-2 line-clamp-2 text-sm text-foreground/70">
                         Résumé de l'appel: Mme Tremblay souhaite un rendez-vous
                         lundi à 14h pour une consultation.
                       </p>
                     </div>
-                    <div className="bg-white/5 -mx-3 -mb-3 mt-3 space-y-3 rounded-lg p-3">
-                      <div className="text-white/50 text-sm">
+                    <div className="bg-foreground/5 -mx-3 -mb-3 mt-3 space-y-3 rounded-lg p-3">
+                      <div className="text-foreground/50 text-sm">
                         Envoyé au CRM
                       </div>
                       <div className="flex justify-between">
                         <div className="flex gap-2">
-                          <div className="size-7 rounded-2xl border border-white/10 flex items-center justify-center">
-                            <MessageSquareText className="size-3.5 text-white/60" />
+                          <div className="size-7 rounded-2xl border border-foreground/10 flex items-center justify-center">
+                            <MessageSquareText className="size-3.5 text-foreground/50" />
                           </div>
-                          <div className="size-7 rounded-2xl border border-white/10 flex items-center justify-center">
-                            <CalendarCheck className="size-3.5 text-white/60" />
+                          <div className="size-7 rounded-2xl border border-foreground/10 flex items-center justify-center">
+                            <CalendarCheck className="size-3.5 text-foreground/50" />
                           </div>
                         </div>
                         <div className="size-7 rounded-2xl bg-primary flex items-center justify-center">
