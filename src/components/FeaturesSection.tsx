@@ -1,7 +1,7 @@
-import { Card } from "@/components/ui/card";
 import { LiquidButton } from "@/components/ui/liquid-glass-button";
 import { WorldMap } from "@/components/ui/world-map";
 import { MeshBackground } from "@/components/ui/mesh-background";
+import { GradientCard } from "@/components/ui/gradient-card";
 import {
   CalendarCheck,
   Headphones,
@@ -43,8 +43,8 @@ export default function FeaturesSection() {
           </p>
         </motion.div>
 
-        {/* Feature cards grid — BIGGER cards */}
-        <div className="mt-16 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+        {/* Feature cards grid */}
+        <div className="mt-16 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
           {/* Card 1 — Configuration */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -52,44 +52,46 @@ export default function FeaturesSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0 }}
           >
-            <Card className="overflow-hidden p-8 bg-muted border-border/60 shadow-sm hover:shadow-md transition-all duration-300 h-full">
-              <Settings className="text-primary size-6" />
-              <h3 className="text-foreground mt-5 text-xl font-semibold">
-                Configuration sur mesure
-              </h3>
-              <p className="text-foreground/80 mt-3 text-balance">
-                Un appel d'onboarding pour comprendre votre entreprise, puis on
-                construit votre assistant vocal personnalisé. Prêt en 1 à 3
-                semaines.
-              </p>
+            <GradientCard className="h-full">
+              <div className="p-8">
+                <Settings className="text-primary size-6" />
+                <h3 className="text-white mt-5 text-xl font-semibold">
+                  Configuration sur mesure
+                </h3>
+                <p className="text-white/70 mt-3 text-balance">
+                  Un appel d'onboarding pour comprendre votre entreprise, puis on
+                  construit votre assistant vocal personnalisé. Prêt en 1 à 3
+                  semaines.
+                </p>
 
-              <Card className="mt-9 aspect-video p-4 bg-background">
-                <div className="mb-0.5 text-sm font-semibold">
-                  Appel d'onboarding
+                <div className="mt-9 aspect-video rounded-xl p-4 bg-white/5 border border-white/10">
+                  <div className="mb-0.5 text-sm font-semibold text-white">
+                    Appel d'onboarding
+                  </div>
+                  <div className="mb-4 flex gap-2 text-sm">
+                    <span className="text-white/50">
+                      Configuration personnalisée
+                    </span>
+                  </div>
+                  <div className="mb-2 flex -space-x-1.5">
+                    {[
+                      { bg: "bg-primary", initials: "CP" },
+                      { bg: "bg-emerald-500", initials: "VE" },
+                    ].map((item, i) => (
+                      <div
+                        key={i}
+                        className={`${item.bg} size-7 rounded-full border border-white/20 flex items-center justify-center text-white text-[10px] font-bold`}
+                      >
+                        {item.initials}
+                      </div>
+                    ))}
+                  </div>
+                  <div className="text-white/50 text-sm font-medium">
+                    Ton, vocabulaire, scénarios
+                  </div>
                 </div>
-                <div className="mb-4 flex gap-2 text-sm">
-                  <span className="text-foreground/60">
-                    Configuration personnalisée
-                  </span>
-                </div>
-                <div className="mb-2 flex -space-x-1.5">
-                  {[
-                    { bg: "bg-primary", initials: "CP" },
-                    { bg: "bg-emerald-500", initials: "VE" },
-                  ].map((item, i) => (
-                    <div
-                      key={i}
-                      className={`${item.bg} size-7 rounded-full border border-background flex items-center justify-center text-white text-[10px] font-bold`}
-                    >
-                      {item.initials}
-                    </div>
-                  ))}
-                </div>
-                <div className="text-foreground/60 text-sm font-medium">
-                  Ton, vocabulaire, scénarios
-                </div>
-              </Card>
-            </Card>
+              </div>
+            </GradientCard>
           </motion.div>
 
           {/* Card 2 — Réponse 24/7 */}
@@ -99,44 +101,46 @@ export default function FeaturesSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.15 }}
           >
-            <Card className="group overflow-hidden px-8 pt-8 bg-muted border-border/60 shadow-sm hover:shadow-md transition-all duration-300 h-full">
-              <PhoneIncoming className="text-primary size-6" />
-              <h3 className="text-foreground mt-5 text-xl font-semibold">
-                Réponse intelligente 24/7
-              </h3>
-              <p className="text-foreground/80 mt-3 text-balance">
-                Votre assistant décroche chaque appel avec le ton de votre
-                entreprise. Il qualifie les leads, prend les rendez-vous et
-                transfère les urgences.
-              </p>
+            <GradientCard className="h-full">
+              <div className="group px-8 pt-8 h-full">
+                <PhoneIncoming className="text-primary size-6" />
+                <h3 className="text-white mt-5 text-xl font-semibold">
+                  Réponse intelligente 24/7
+                </h3>
+                <p className="text-white/70 mt-3 text-balance">
+                  Votre assistant décroche chaque appel avec le ton de votre
+                  entreprise. Il qualifie les leads, prend les rendez-vous et
+                  transfère les urgences.
+                </p>
 
-              <div aria-hidden className="relative mt-6">
-                <Card className="aspect-video w-4/5 translate-y-4 p-3 transition-transform duration-200 ease-in-out group-hover:-rotate-3 bg-background">
-                  <div className="mb-3 flex items-center gap-2">
-                    <div className="bg-emerald-500 size-6 rounded-full flex items-center justify-center">
-                      <Phone className="size-3 text-white" />
+                <div aria-hidden className="relative mt-6">
+                  <div className="aspect-video w-4/5 translate-y-4 rounded-xl p-3 transition-transform duration-200 ease-in-out group-hover:-rotate-3 bg-white/5 border border-white/10">
+                    <div className="mb-3 flex items-center gap-2">
+                      <div className="bg-emerald-500 size-6 rounded-full flex items-center justify-center">
+                        <Phone className="size-3 text-white" />
+                      </div>
+                      <span className="text-white/50 text-sm font-medium">
+                        Appel entrant
+                      </span>
+                      <span className="text-white/30 text-xs">
+                        Maintenant
+                      </span>
                     </div>
-                    <span className="text-foreground/60 text-sm font-medium">
-                      Appel entrant
-                    </span>
-                    <span className="text-foreground/40 text-xs">
-                      Maintenant
-                    </span>
+                    <div className="ml-8 space-y-2">
+                      <div className="bg-white/10 h-2 rounded-full" />
+                      <div className="bg-white/10 h-2 w-3/5 rounded-full" />
+                      <div className="bg-white/10 h-2 w-1/2 rounded-full" />
+                    </div>
+                    <UserCheck className="ml-8 mt-3 size-5 text-primary" />
                   </div>
-                  <div className="ml-8 space-y-2">
-                    <div className="bg-foreground/10 h-2 rounded-full" />
-                    <div className="bg-foreground/10 h-2 w-3/5 rounded-full" />
-                    <div className="bg-foreground/10 h-2 w-1/2 rounded-full" />
+                  <div className="aspect-3/5 absolute -top-4 right-0 flex w-2/5 translate-y-4 rounded-xl p-2 transition-transform duration-200 ease-in-out group-hover:rotate-3 bg-white/5 border border-white/10">
+                    <div className="m-auto flex size-10 rounded-full bg-primary/20">
+                      <CalendarCheck className="m-auto size-4 text-primary" />
+                    </div>
                   </div>
-                  <UserCheck className="ml-8 mt-3 size-5 text-primary" />
-                </Card>
-                <Card className="aspect-3/5 absolute -top-4 right-0 flex w-2/5 translate-y-4 p-2 transition-transform duration-200 ease-in-out group-hover:rotate-3 bg-background">
-                  <div className="m-auto flex size-10 rounded-full bg-primary/10">
-                    <CalendarCheck className="m-auto size-4 text-primary" />
-                  </div>
-                </Card>
+                </div>
               </div>
-            </Card>
+            </GradientCard>
           </motion.div>
 
           {/* Card 3 — Contrôle total */}
@@ -146,53 +150,55 @@ export default function FeaturesSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <Card className="group overflow-hidden px-8 pt-8 bg-muted border-border/60 shadow-sm hover:shadow-md transition-all duration-300 h-full">
-              <Headphones className="text-primary size-6" />
-              <h3 className="text-foreground mt-5 text-xl font-semibold">
-                Contrôle total et résumés
-              </h3>
-              <p className="text-foreground/80 mt-3 text-balance">
-                Résumé par courriel et fiche CRM après chaque appel. Besoin d'un
-                ajustement? On s'en occupe. Aucun engagement.
-              </p>
+            <GradientCard className="h-full">
+              <div className="group px-8 pt-8 h-full">
+                <Headphones className="text-primary size-6" />
+                <h3 className="text-white mt-5 text-xl font-semibold">
+                  Contrôle total et résumés
+                </h3>
+                <p className="text-white/70 mt-3 text-balance">
+                  Résumé par courriel et fiche CRM après chaque appel. Besoin d'un
+                  ajustement? On s'en occupe. Aucun engagement.
+                </p>
 
-              <div className="mask-b-from-50 -mx-2 -mt-2 px-2 pt-2">
-                <Card
-                  aria-hidden
-                  className="mt-6 aspect-video translate-y-4 p-4 pb-6 transition-transform duration-200 group-hover:translate-y-0 bg-background"
-                >
-                  <div className="w-fit">
-                    <Sparkles className="size-3.5 fill-primary/50 stroke-primary" />
-                    <p className="mt-2 line-clamp-2 text-sm">
-                      Résumé de l'appel: Mme Tremblay souhaite un rendez-vous
-                      lundi à 14h pour une consultation.
-                    </p>
-                  </div>
-                  <div className="bg-foreground/5 -mx-3 -mb-3 mt-3 space-y-3 rounded-lg p-3">
-                    <div className="text-foreground/60 text-sm">
-                      Envoyé au CRM
+                <div className="mask-b-from-50 -mx-2 -mt-2 px-2 pt-2">
+                  <div
+                    aria-hidden
+                    className="mt-6 aspect-video translate-y-4 rounded-xl p-4 pb-6 transition-transform duration-200 group-hover:translate-y-0 bg-white/5 border border-white/10"
+                  >
+                    <div className="w-fit">
+                      <Sparkles className="size-3.5 fill-primary/50 stroke-primary" />
+                      <p className="mt-2 line-clamp-2 text-sm text-white/70">
+                        Résumé de l'appel: Mme Tremblay souhaite un rendez-vous
+                        lundi à 14h pour une consultation.
+                      </p>
                     </div>
-                    <div className="flex justify-between">
-                      <div className="flex gap-2">
-                        <div className="size-7 rounded-2xl border flex items-center justify-center bg-transparent">
-                          <MessageSquareText className="size-3.5" />
+                    <div className="bg-white/5 -mx-3 -mb-3 mt-3 space-y-3 rounded-lg p-3">
+                      <div className="text-white/50 text-sm">
+                        Envoyé au CRM
+                      </div>
+                      <div className="flex justify-between">
+                        <div className="flex gap-2">
+                          <div className="size-7 rounded-2xl border border-white/10 flex items-center justify-center">
+                            <MessageSquareText className="size-3.5 text-white/60" />
+                          </div>
+                          <div className="size-7 rounded-2xl border border-white/10 flex items-center justify-center">
+                            <CalendarCheck className="size-3.5 text-white/60" />
+                          </div>
                         </div>
-                        <div className="size-7 rounded-2xl border flex items-center justify-center bg-transparent">
-                          <CalendarCheck className="size-3.5" />
+                        <div className="size-7 rounded-2xl bg-primary flex items-center justify-center">
+                          <Sparkles className="size-3.5 text-white" />
                         </div>
                       </div>
-                      <div className="size-7 rounded-2xl bg-primary flex items-center justify-center">
-                        <Sparkles className="size-3.5 text-white" />
-                      </div>
                     </div>
                   </div>
-                </Card>
+                </div>
               </div>
-            </Card>
+            </GradientCard>
           </motion.div>
         </div>
 
-        {/* Map section — INSIDE features, below cards */}
+        {/* Map section — floating card with border */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -212,7 +218,11 @@ export default function FeaturesSection() {
             </p>
           </div>
 
-          <WorldMap markers={quebecMarker} lineColor="#0066ff" />
+          <GradientCard className="w-full p-1">
+            <div className="rounded-xl overflow-hidden">
+              <WorldMap markers={quebecMarker} lineColor="#0066ff" />
+            </div>
+          </GradientCard>
         </motion.div>
 
         {/* CTA */}
