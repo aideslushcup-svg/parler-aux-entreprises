@@ -1,6 +1,5 @@
-import { useRef, useState, useMemo, useCallback } from "react";
+import { useRef, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import DottedMap from "dotted-map";
 
 interface MapProps {
   dots?: Array<{
@@ -13,6 +12,18 @@ interface MapProps {
   loop?: boolean;
 }
 
+// Quebec bounding box
+const BOUNDS = {
+  latMin: 44.5,
+  latMax: 49.5,
+  lngMin: -80,
+  lngMax: -63,
+};
+
+const SVG_W = 800;
+const SVG_H = 400;
+const PAD = 40; // padding so labels don't clip
+
 export function WorldMap({
   dots = [],
   lineColor = "#0066ff",
@@ -23,32 +34,23 @@ export function WorldMap({
   const svgRef = useRef<SVGSVGElement>(null);
   const [hoveredLocation, setHoveredLocation] = useState<string | null>(null);
 
-  const map = useMemo(
-    () => new DottedMap({ height: 100, grid: "diagonal" }),
-    []
-  );
-
-  const svgMap = useMemo(
-    () =>
-      map.getSVG({
-        radius: 0.22,
-        color: "#00000040",
-        shape: "circle",
-        backgroundColor: "white",
-      }),
-    [map]
-  );
-
   const projectPoint = useCallback((lat: number, lng: number) => {
-    const x = (lng + 180) * (800 / 360);
-    const y = (90 - lat) * (400 / 180);
+    const x =
+      PAD +
+      ((lng - BOUNDS.lngMin) / (BOUNDS.lngMax - BOUNDS.lngMin)) *
+        (SVG_W - PAD * 2);
+    const y =
+      PAD +
+      ((BOUNDS.latMax - lat) / (BOUNDS.latMax - BOUNDS.latMin)) *
+        (SVG_H - PAD * 2);
     return { x, y };
   }, []);
 
   const createCurvedPath = useCallback(
     (start: { x: number; y: number }, end: { x: number; y: number }) => {
       const midX = (start.x + end.x) / 2;
-      const midY = Math.min(start.y, end.y) - 50;
+      const dist = Math.hypot(end.x - start.x, end.y - start.y);
+      const midY = Math.min(start.y, end.y) - dist * 0.25;
       return `M ${start.x} ${start.y} Q ${midX} ${midY} ${end.x} ${end.y}`;
     },
     []
@@ -60,31 +62,29 @@ export function WorldMap({
   const fullCycleDuration = totalAnimationTime + pauseTime;
 
   return (
-    <div className="w-full aspect-[2/1] bg-white rounded-lg relative font-sans overflow-hidden">
-      <img
-        src={`data:image/svg+xml;utf8,${encodeURIComponent(svgMap)}`}
-        className="h-full w-full [mask-image:linear-gradient(to_bottom,transparent,white_10%,white_90%,transparent)] pointer-events-none select-none object-cover"
-        alt="world map"
-        height="495"
-        width="1056"
-        draggable={false}
-      />
+    <div className="w-full aspect-[2/1] rounded-lg relative font-sans overflow-hidden bg-muted/50">
       <svg
         ref={svgRef}
-        viewBox="0 0 800 400"
-        className="w-full h-full absolute inset-0 pointer-events-auto select-none"
+        viewBox={`0 0 ${SVG_W} ${SVG_H}`}
+        className="w-full h-full pointer-events-auto select-none"
         preserveAspectRatio="xMidYMid meet"
       >
         <defs>
-          <linearGradient id="path-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="white" stopOpacity="0" />
-            <stop offset="5%" stopColor={lineColor} stopOpacity="1" />
-            <stop offset="95%" stopColor={lineColor} stopOpacity="1" />
-            <stop offset="100%" stopColor="white" stopOpacity="0" />
+          <linearGradient
+            id="path-gradient"
+            x1="0%"
+            y1="0%"
+            x2="100%"
+            y2="0%"
+          >
+            <stop offset="0%" stopColor={lineColor} stopOpacity="0" />
+            <stop offset="10%" stopColor={lineColor} stopOpacity="1" />
+            <stop offset="90%" stopColor={lineColor} stopOpacity="1" />
+            <stop offset="100%" stopColor={lineColor} stopOpacity="0" />
           </linearGradient>
           <filter id="glow">
             <feMorphology operator="dilate" radius="0.5" />
-            <feGaussianBlur stdDeviation="1" result="coloredBlur" />
+            <feGaussianBlur stdDeviation="1.5" result="coloredBlur" />
             <feMerge>
               <feMergeNode in="coloredBlur" />
               <feMergeNode in="SourceGraphic" />
@@ -92,6 +92,7 @@ export function WorldMap({
           </filter>
         </defs>
 
+        {/* Animated paths */}
         {dots.map((dot, i) => {
           const startPoint = projectPoint(dot.start.lat, dot.start.lng);
           const endPoint = projectPoint(dot.end.lat, dot.end.lng);
@@ -106,7 +107,7 @@ export function WorldMap({
                 d={createCurvedPath(startPoint, endPoint)}
                 fill="none"
                 stroke="url(#path-gradient)"
-                strokeWidth="1"
+                strokeWidth="1.5"
                 initial={{ pathLength: 0 }}
                 animate={
                   loop
@@ -131,7 +132,7 @@ export function WorldMap({
               />
               {loop && (
                 <motion.circle
-                  r="4"
+                  r="5"
                   fill={lineColor}
                   initial={{ offsetDistance: "0%", opacity: 0 }}
                   animate={{
@@ -154,12 +155,14 @@ export function WorldMap({
           );
         })}
 
+        {/* City dots and labels */}
         {dots.map((dot, i) => {
           const startPoint = projectPoint(dot.start.lat, dot.start.lng);
           const endPoint = projectPoint(dot.end.lat, dot.end.lng);
 
           return (
             <g key={`points-group-${i}`}>
+              {/* Start Point */}
               <g key={`start-${i}`}>
                 <motion.g
                   onHoverStart={() =>
@@ -173,21 +176,21 @@ export function WorldMap({
                   <circle
                     cx={startPoint.x}
                     cy={startPoint.y}
-                    r="3"
+                    r="5"
                     fill={lineColor}
                     filter="url(#glow)"
                   />
                   <circle
                     cx={startPoint.x}
                     cy={startPoint.y}
-                    r="3"
+                    r="5"
                     fill={lineColor}
                     opacity="0.5"
                   >
                     <animate
                       attributeName="r"
-                      from="3"
-                      to="12"
+                      from="5"
+                      to="18"
                       dur="2s"
                       begin="0s"
                       repeatCount="indefinite"
@@ -210,13 +213,13 @@ export function WorldMap({
                     className="pointer-events-none"
                   >
                     <foreignObject
-                      x={startPoint.x - 50}
-                      y={startPoint.y - 35}
-                      width="100"
-                      height="30"
+                      x={startPoint.x - 55}
+                      y={startPoint.y - 40}
+                      width="110"
+                      height="34"
                     >
                       <div className="flex items-center justify-center h-full">
-                        <span className="text-xs font-medium px-2 py-0.5 rounded-md bg-white/95 text-black border border-gray-200 shadow-sm">
+                        <span className="text-sm font-semibold px-2.5 py-1 rounded-md bg-white/95 text-black border border-gray-200 shadow-sm">
                           {dot.start.label}
                         </span>
                       </div>
@@ -225,6 +228,7 @@ export function WorldMap({
                 )}
               </g>
 
+              {/* End Point */}
               <g key={`end-${i}`}>
                 <motion.g
                   onHoverStart={() =>
@@ -238,21 +242,21 @@ export function WorldMap({
                   <circle
                     cx={endPoint.x}
                     cy={endPoint.y}
-                    r="3"
+                    r="5"
                     fill={lineColor}
                     filter="url(#glow)"
                   />
                   <circle
                     cx={endPoint.x}
                     cy={endPoint.y}
-                    r="3"
+                    r="5"
                     fill={lineColor}
                     opacity="0.5"
                   >
                     <animate
                       attributeName="r"
-                      from="3"
-                      to="12"
+                      from="5"
+                      to="18"
                       dur="2s"
                       begin="0.5s"
                       repeatCount="indefinite"
@@ -275,13 +279,13 @@ export function WorldMap({
                     className="pointer-events-none"
                   >
                     <foreignObject
-                      x={endPoint.x - 50}
-                      y={endPoint.y - 35}
-                      width="100"
-                      height="30"
+                      x={endPoint.x - 55}
+                      y={endPoint.y - 40}
+                      width="110"
+                      height="34"
                     >
                       <div className="flex items-center justify-center h-full">
-                        <span className="text-xs font-medium px-2 py-0.5 rounded-md bg-white/95 text-black border border-gray-200 shadow-sm">
+                        <span className="text-sm font-semibold px-2.5 py-1 rounded-md bg-white/95 text-black border border-gray-200 shadow-sm">
                           {dot.end.label}
                         </span>
                       </div>
@@ -294,6 +298,7 @@ export function WorldMap({
         })}
       </svg>
 
+      {/* Mobile Tooltip */}
       <AnimatePresence>
         {hoveredLocation && (
           <motion.div
