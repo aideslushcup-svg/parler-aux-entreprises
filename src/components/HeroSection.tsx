@@ -1,4 +1,4 @@
-import { Star, Play, Clock, Subtitles } from "lucide-react";
+import { Play, Clock, Subtitles } from "lucide-react";
 import { LiquidButton } from "@/components/ui/liquid-glass-button";
 import { Web3MediaHero } from "@/components/ui/web3media-hero";
 import { BorderBeam } from "@/components/ui/border-beam";
@@ -51,32 +51,6 @@ const HeroSection = ({ videoUrl = null }: HeroSectionProps) => {
             </a>
           </div>
 
-          {/* Social proof */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
-            <div className="flex -space-x-3">
-              {[
-                "bg-primary",
-                "bg-emerald-500",
-                "bg-rose-500",
-                "bg-amber-500",
-                "bg-violet-500",
-              ].map((bg, i) => (
-                <div
-                  key={i}
-                  className={`w-10 h-10 rounded-full ${bg} border-2 border-white flex items-center justify-center text-white text-xs font-bold`}
-                >
-                  {["JB", "ML", "SC", "PT", "LD"][i]}
-                </div>
-              ))}
-            </div>
-            <div className="flex items-center gap-1.5 text-base font-medium text-foreground">
-              <Star className="w-5 h-5 fill-amber-400 text-amber-400" />
-              <span>
-                500+ entreprises — On aide des PME partout au Québec à ne plus
-                manquer d'appels.
-              </span>
-            </div>
-          </div>
         </motion.div>
 
         {/* Floating Video Card — overlaps hero boundary */}

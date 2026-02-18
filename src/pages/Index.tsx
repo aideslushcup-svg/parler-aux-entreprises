@@ -2,7 +2,8 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import VideoPlayer from "@/components/VideoPlayer";
 import ProblemSolution from "@/components/ProblemSolution";
-import HowItWorks from "@/components/HowItWorks";
+import GlobeSection from "@/components/GlobeSection";
+import FeaturesSection from "@/components/FeaturesSection";
 import PricingSection from "@/components/PricingSection";
 import IntegrationsSection from "@/components/IntegrationsSection";
 import FAQSection from "@/components/FAQSection";
@@ -16,7 +17,8 @@ const Index = () => {
         <HeroSection videoUrl={null} />
         <VideoPlayer />
         <ProblemSolution />
-        <HowItWorks />
+        <GlobeSection />
+        <FeaturesSection />
         <PricingSection />
         <IntegrationsSection />
         <FAQSection />

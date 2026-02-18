@@ -19,21 +19,21 @@ const footerLinks = {
 
 const FooterSection = () => {
   return (
-    <footer id="cta-final" className="bg-navy text-navy-foreground">
+    <footer id="cta-final" className="bg-white text-foreground">
       {/* CTA Block */}
-      <div className="section-padding border-b border-white/10">
+      <div className="section-padding border-b border-border/40">
         <div className="container-narrow text-center max-w-2xl">
-          <h2 className="text-2xl md:text-4xl font-bold mb-4">
+          <h2 className="text-2xl md:text-4xl font-bold mb-4 text-foreground">
             Prêt à ne plus jamais manquer un appel?
           </h2>
-          <p className="text-body-lg text-white/70 mb-8">
+          <p className="text-body-lg text-muted-foreground mb-8">
             Réservez un appel découverte gratuit de 15 minutes. On vous montre exactement
             comment Calendia peut s'adapter à votre entreprise.
           </p>
           <a href="#">
             <LiquidButton size="xl">Réserver mon appel gratuit</LiquidButton>
           </a>
-          <p className="text-sm text-white/50 mt-4">
+          <p className="text-sm text-muted-foreground/70 mt-4">
             Configuration en moins de 48h. Sans engagement. Phase pilote incluse.
           </p>
         </div>
@@ -48,20 +48,20 @@ const FooterSection = () => {
               <div className="text-lg font-bold mb-3">
                 <span className="text-primary">✦</span> Calendia Pro
               </div>
-              <p className="text-sm text-white/60">
+              <p className="text-sm text-muted-foreground">
                 Votre réceptionniste IA, avec l'accent d'ici.
               </p>
             </div>
 
             {Object.entries(footerLinks).map(([category, links]) => (
               <div key={category}>
-                <h4 className="font-semibold text-sm mb-4 text-white/90">{category}</h4>
+                <h4 className="font-semibold text-sm mb-4 text-foreground/90">{category}</h4>
                 <ul className="space-y-2.5">
                   {links.map((link) => (
                     <li key={link.label}>
                       <a
                         href={link.href}
-                        className="text-sm text-white/60 hover:text-white transition-colors"
+                        className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                       >
                         {link.label}
                       </a>
@@ -75,12 +75,12 @@ const FooterSection = () => {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-white/10 py-6">
-        <div className="container-narrow flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-white/50">
+      <div className="border-t border-border/40 py-6">
+        <div className="container-narrow flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground/70">
           <span>© 2026 Calendia Pro. Tous droits réservés. Fait au Québec 🇨🇦</span>
           <div className="flex items-center gap-4">
             {["LinkedIn", "Facebook", "Instagram"].map((s) => (
-              <a key={s} href="#" className="hover:text-white transition-colors">{s}</a>
+              <a key={s} href="#" className="hover:text-foreground transition-colors">{s}</a>
             ))}
           </div>
         </div>

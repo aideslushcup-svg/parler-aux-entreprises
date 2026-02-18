@@ -1,0 +1,231 @@
+import { Card } from "@/components/ui/card";
+import { LiquidButton } from "@/components/ui/liquid-glass-button";
+import {
+  CalendarCheck,
+  Headphones,
+  MessageSquareText,
+  Phone,
+  PhoneIncoming,
+  Settings,
+  Sparkles,
+  UserCheck,
+} from "lucide-react";
+import { motion } from "framer-motion";
+
+export default function FeaturesSection() {
+  return (
+    <section
+      id="comment-ca-marche"
+      className="relative py-20 md:py-32 overflow-hidden"
+      style={{
+        background:
+          "linear-gradient(180deg, #f0f4ff 0%, #e8efff 50%, #f0f4ff 100%)",
+      }}
+    >
+      {/* Subtle glow accents */}
+      <div
+        className="absolute top-0 left-1/4 w-96 h-96 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(0,102,255,0.06) 0%, transparent 70%)",
+        }}
+      />
+      <div
+        className="absolute bottom-0 right-1/4 w-96 h-96 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(0,102,255,0.04) 0%, transparent 70%)",
+        }}
+      />
+
+      <div className="relative z-10 mx-auto max-w-5xl px-6">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center"
+        >
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-tight">
+            Comment ça <span className="text-primary">marche</span>
+          </h2>
+          <p className="mt-5 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+            On s'occupe de tout, de A à Z. Vous restez concentré sur votre
+            entreprise.
+          </p>
+        </motion.div>
+
+        {/* Feature cards grid */}
+        <div className="mt-16 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {/* Card 1 — Configuration */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0 }}
+          >
+            <Card className="overflow-hidden p-6 bg-white/80 backdrop-blur-sm border-primary/10 hover:shadow-xl hover:border-primary/20 transition-all duration-300 h-full">
+              <Settings className="text-primary size-5" />
+              <h3 className="text-foreground mt-5 text-lg font-semibold">
+                Configuration sur mesure
+              </h3>
+              <p className="text-muted-foreground mt-3 text-balance">
+                Un appel d'onboarding pour comprendre votre entreprise, puis on
+                construit votre assistant vocal personnalisé. Prêt en 1 à 3
+                semaines.
+              </p>
+
+              {/* Illustration — Onboarding card */}
+              <Card className="mt-9 aspect-video p-4 bg-background">
+                <div className="mb-0.5 text-sm font-semibold">
+                  Appel d'onboarding
+                </div>
+                <div className="mb-4 flex gap-2 text-sm">
+                  <span className="text-muted-foreground">
+                    Configuration personnalisée
+                  </span>
+                </div>
+                <div className="mb-2 flex -space-x-1.5">
+                  {[
+                    { bg: "bg-primary", initials: "CP" },
+                    { bg: "bg-emerald-500", initials: "VE" },
+                  ].map((item, i) => (
+                    <div
+                      key={i}
+                      className={`${item.bg} size-7 rounded-full border border-background flex items-center justify-center text-white text-[10px] font-bold`}
+                    >
+                      {item.initials}
+                    </div>
+                  ))}
+                </div>
+                <div className="text-muted-foreground text-sm font-medium">
+                  Ton, vocabulaire, scénarios
+                </div>
+              </Card>
+            </Card>
+          </motion.div>
+
+          {/* Card 2 — Réponse 24/7 */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+          >
+            <Card className="group overflow-hidden px-6 pt-6 bg-white/80 backdrop-blur-sm border-primary/10 hover:shadow-xl hover:border-primary/20 transition-all duration-300 h-full">
+              <PhoneIncoming className="text-primary size-5" />
+              <h3 className="text-foreground mt-5 text-lg font-semibold">
+                Réponse intelligente 24/7
+              </h3>
+              <p className="text-muted-foreground mt-3 text-balance">
+                Votre assistant décroche chaque appel avec le ton de votre
+                entreprise. Il qualifie les leads, prend les rendez-vous et
+                transfère les urgences.
+              </p>
+
+              {/* Illustration — Call flow */}
+              <div aria-hidden className="relative mt-6">
+                <Card className="aspect-video w-4/5 translate-y-4 p-3 transition-transform duration-200 ease-in-out group-hover:-rotate-3 bg-background">
+                  <div className="mb-3 flex items-center gap-2">
+                    <div className="bg-emerald-500 size-6 rounded-full flex items-center justify-center">
+                      <Phone className="size-3 text-white" />
+                    </div>
+                    <span className="text-muted-foreground text-sm font-medium">
+                      Appel entrant
+                    </span>
+                    <span className="text-muted-foreground/75 text-xs">
+                      Maintenant
+                    </span>
+                  </div>
+                  <div className="ml-8 space-y-2">
+                    <div className="bg-foreground/10 h-2 rounded-full" />
+                    <div className="bg-foreground/10 h-2 w-3/5 rounded-full" />
+                    <div className="bg-foreground/10 h-2 w-1/2 rounded-full" />
+                  </div>
+                  <UserCheck className="ml-8 mt-3 size-5 text-primary" />
+                </Card>
+                <Card className="aspect-3/5 absolute -top-4 right-0 flex w-2/5 translate-y-4 p-2 transition-transform duration-200 ease-in-out group-hover:rotate-3 bg-background">
+                  <div className="m-auto flex size-10 rounded-full bg-primary/10">
+                    <CalendarCheck className="m-auto size-4 text-primary" />
+                  </div>
+                </Card>
+              </div>
+            </Card>
+          </motion.div>
+
+          {/* Card 3 — Contrôle total */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            <Card className="group overflow-hidden px-6 pt-6 bg-white/80 backdrop-blur-sm border-primary/10 hover:shadow-xl hover:border-primary/20 transition-all duration-300 h-full">
+              <Headphones className="text-primary size-5" />
+              <h3 className="text-foreground mt-5 text-lg font-semibold">
+                Contrôle total et résumés
+              </h3>
+              <p className="text-muted-foreground mt-3 text-balance">
+                Résumé par courriel et fiche CRM après chaque appel. Besoin d'un
+                ajustement? On s'en occupe. Aucun engagement.
+              </p>
+
+              {/* Illustration — Summary card */}
+              <div className="mask-b-from-50 -mx-2 -mt-2 px-2 pt-2">
+                <Card
+                  aria-hidden
+                  className="mt-6 aspect-video translate-y-4 p-4 pb-6 transition-transform duration-200 group-hover:translate-y-0 bg-background"
+                >
+                  <div className="w-fit">
+                    <Sparkles className="size-3.5 fill-primary/50 stroke-primary" />
+                    <p className="mt-2 line-clamp-2 text-sm">
+                      Résumé de l'appel: Mme Tremblay souhaite un rendez-vous
+                      lundi à 14h pour une consultation.
+                    </p>
+                  </div>
+                  <div className="bg-foreground/5 -mx-3 -mb-3 mt-3 space-y-3 rounded-lg p-3">
+                    <div className="text-muted-foreground text-sm">
+                      Envoyé au CRM
+                    </div>
+                    <div className="flex justify-between">
+                      <div className="flex gap-2">
+                        <div className="size-7 rounded-2xl border flex items-center justify-center bg-transparent">
+                          <MessageSquareText className="size-3.5" />
+                        </div>
+                        <div className="size-7 rounded-2xl border flex items-center justify-center bg-transparent">
+                          <CalendarCheck className="size-3.5" />
+                        </div>
+                      </div>
+                      <div className="size-7 rounded-2xl bg-primary flex items-center justify-center">
+                        <Sparkles className="size-3.5 text-white" />
+                      </div>
+                    </div>
+                  </div>
+                </Card>
+              </div>
+            </Card>
+          </motion.div>
+        </div>
+
+        {/* CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="text-center mt-14"
+        >
+          <a href="#cta-final">
+            <LiquidButton
+              size="lg"
+              className="text-lg px-10 py-5 h-auto font-bold"
+            >
+              Réserver un appel découverte
+            </LiquidButton>
+          </a>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
