@@ -4,8 +4,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { MeshBackground } from "@/components/ui/mesh-background";
-
 const faqs = [
   {
     q: "Est-ce que l'IA comprend le français québécois?",
@@ -35,10 +33,9 @@ const faqs = [
 
 const FAQSection = () => {
   return (
-    <section id="faq" className="relative py-14 md:py-20 overflow-hidden bg-background">
-      <MeshBackground />
+    <section id="faq" className="py-14 md:py-20 bg-background">
 
-      <div className="relative z-10 mx-auto max-w-5xl px-6">
+      <div className="mx-auto max-w-5xl px-6">
         <h2 className="text-3xl md:text-4xl font-semibold text-foreground text-center mb-12">
           Questions fréquentes
         </h2>

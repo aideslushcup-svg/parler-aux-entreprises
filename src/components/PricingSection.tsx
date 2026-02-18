@@ -1,7 +1,5 @@
 import { X, Check } from "lucide-react";
 import { LiquidButton } from "@/components/ui/liquid-glass-button";
-import { MeshBackground } from "@/components/ui/mesh-background";
-
 const tradFeatures = [
   "Disponible 9h à 17h seulement",
   "Absences, vacances, maladie",
@@ -20,10 +18,9 @@ const proFeatures = [
 
 const PricingSection = () => {
   return (
-    <section id="tarifs" className="relative py-14 md:py-20 overflow-hidden bg-background">
-      <MeshBackground />
+    <section id="tarifs" className="py-14 md:py-20 bg-background">
 
-      <div className="relative z-10 mx-auto max-w-5xl px-6">
+      <div className="mx-auto max-w-5xl px-6">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-4">
             Un prix simple. Pas de surprises.

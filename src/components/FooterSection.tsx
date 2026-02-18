@@ -34,7 +34,7 @@ const FooterSection = () => {
             <LiquidButton size="xl">Réserver mon appel gratuit</LiquidButton>
           </a>
           <p className="text-sm text-muted-foreground/70 mt-4">
-            Configuration en moins de 48h. Sans engagement. Phase pilote incluse.
+            Un appel découverte, puis on s'occupe de tout. Prêt en 1 à 3 semaines. Sans engagement.
           </p>
         </div>
       </div>

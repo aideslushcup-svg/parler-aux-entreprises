@@ -2,14 +2,31 @@ import { motion } from "framer-motion";
 import { InfiniteTextCarousel } from "@/components/ui/infinite-text-carousel";
 
 const industries = [
-  "PME",
-  "Construction",
-  "Clinique",
-  "Courtier immobilier",
+  "Plomberie",
+  "Clinique dentaire",
+  "Électricien",
   "Restaurant",
+  "Cabinet d'avocats",
   "Hôtel",
-  "Déménagement",
-  "Cabinet",
+  "HVAC",
+  "Clinique médicale",
+  "Toiture",
+  "Salon de coiffure",
+  "Comptable",
+  "Compagnie de sinistres",
+  "Planchers",
+  "Vétérinaire",
+  "Garage automobile",
+  "Serrurier",
+  "Paysagiste",
+  "Optométriste",
+  "Notaire",
+  "Physiothérapie",
+  "Courtier immobilier",
+  "Exterminateur",
+  "Chiropraticien",
+  "Centre d'esthétique",
+  "Entrepreneur général",
 ];
 
 const VideoPlayer = () => {
@@ -21,13 +38,8 @@ const VideoPlayer = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
+          className="flex flex-col gap-6"
         >
-          <h3 className="text-center text-lg md:text-2xl font-medium text-foreground/80 tracking-tight mb-10">
-            Des entreprises de toutes{" "}
-            <span className="font-semibold text-primary">tailles</span> au
-            Québec
-          </h3>
-
           <InfiniteTextCarousel
             texts={industries}
             gap={64}
@@ -36,6 +48,12 @@ const VideoPlayer = () => {
             className="py-8"
             textClassName="text-4xl md:text-5xl font-bold"
           />
+
+          <h3 className="text-center text-lg md:text-2xl font-medium text-foreground/80 tracking-tight">
+            Des entreprises de toutes{" "}
+            <span className="font-semibold text-primary">tailles</span> au
+            Québec
+          </h3>
         </motion.div>
       </div>
     </section>
