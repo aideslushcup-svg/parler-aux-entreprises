@@ -11,7 +11,7 @@ const VideoPlayer = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <h3 className="text-center text-lg md:text-2xl font-medium text-foreground/50 tracking-tight mb-10">
+          <h3 className="text-center text-lg md:text-2xl font-medium text-foreground/80 tracking-tight mb-10">
             Des entreprises de toutes{" "}
             <span className="font-semibold text-primary">tailles</span> au
             Québec

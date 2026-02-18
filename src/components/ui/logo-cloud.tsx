@@ -94,7 +94,7 @@ function LogoCard({
       )}
       {...props}
     >
-      <span className="pointer-events-none select-none text-base md:text-lg font-semibold text-foreground/40 tracking-wide">
+      <span className="pointer-events-none select-none text-base md:text-lg font-semibold text-foreground/80 tracking-wide">
         {name}
       </span>
       {children}

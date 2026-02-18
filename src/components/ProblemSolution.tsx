@@ -25,17 +25,17 @@ const ProblemSolution = () => {
             Pourquoi choisir{" "}
             <span className="text-primary">Calendia</span> ?
           </h2>
-          <p className="mt-4 text-base md:text-lg text-white/60 font-medium max-w-xl mx-auto">
+          <p className="mt-4 text-base md:text-lg text-white/80 font-medium max-w-xl mx-auto">
             Chaque appel manqué, c'est un client perdu. Voici pourquoi 500+
             entreprises nous font confiance.
           </p>
         </motion.div>
 
         <div className="relative">
-          <div className="relative z-10 grid grid-cols-6 gap-3">
+          <div className="relative z-10 grid grid-cols-6 gap-4">
             {/* Card 1 — Big stat: appels manqués = argent perdu */}
             <GlowCard customSize glowColor="blue" className="col-span-full flex overflow-hidden lg:col-span-2 bg-white/[0.03]">
-              <CardContent className="relative m-auto size-fit pt-6">
+              <CardContent className="relative m-auto size-fit p-8">
                 <div className="relative flex h-24 w-56 items-center">
                   <svg
                     className="text-white/10 absolute inset-0 size-full"
@@ -55,7 +55,7 @@ const ProblemSolution = () => {
                 <h2 className="mt-6 text-center text-2xl font-semibold text-white">
                   ne rappellent jamais
                 </h2>
-                <p className="mt-2 text-center text-sm text-white/50">
+                <p className="mt-2 text-center text-sm text-white/80">
                   des clients tombés sur une boîte vocale
                 </p>
               </CardContent>
@@ -63,7 +63,7 @@ const ProblemSolution = () => {
 
             {/* Card 2 — Économies */}
             <GlowCard customSize glowColor="blue" className="col-span-full overflow-hidden sm:col-span-3 lg:col-span-2 bg-white/[0.03]">
-              <CardContent className="pt-6">
+              <CardContent className="p-8">
                 <div className="relative mx-auto flex aspect-square size-32 rounded-full border border-white/10 before:absolute before:-inset-2 before:rounded-full before:border before:border-white/5">
                   <DollarSign className="m-auto h-16 w-16 text-primary" strokeWidth={1.5} />
                 </div>
@@ -71,7 +71,7 @@ const ProblemSolution = () => {
                   <h2 className="text-lg font-medium text-white">
                     50 000$/an économisés
                   </h2>
-                  <p className="text-white/50 text-sm">
+                  <p className="text-white/80 text-sm">
                     Une réceptionniste coûte 40 000$ à 60 000$/an.
                     Calendia Pro commence à 99$/mois.
                   </p>
@@ -81,7 +81,7 @@ const ProblemSolution = () => {
 
             {/* Card 3 — Temps de réponse */}
             <GlowCard customSize glowColor="blue" className="col-span-full overflow-hidden sm:col-span-3 lg:col-span-2 bg-white/[0.03]">
-              <CardContent className="pt-6">
+              <CardContent className="p-8">
                 <div className="pt-6 lg:px-6 flex items-center justify-center">
                   <div className="relative">
                     <div className="text-6xl font-bold text-primary text-center">
@@ -99,7 +99,7 @@ const ProblemSolution = () => {
                   <h2 className="text-lg font-medium text-white">
                     Temps de réponse instantané
                   </h2>
-                  <p className="text-white/50 text-sm">
+                  <p className="text-white/80 text-sm">
                     Zéro attente. Votre assistant décroche avant la 2e
                     sonnerie, chaque fois.
                   </p>
@@ -109,7 +109,7 @@ const ProblemSolution = () => {
 
             {/* Card 4 — 24/7 */}
             <GlowCard customSize glowColor="blue" className="col-span-full overflow-hidden lg:col-span-3 bg-white/[0.03]">
-              <CardContent className="grid pt-6 sm:grid-cols-2">
+              <CardContent className="grid p-8 sm:grid-cols-2">
                 <div className="relative z-10 flex flex-col justify-between space-y-12 lg:space-y-6">
                   <div className="relative flex aspect-square size-12 rounded-full border border-white/10 before:absolute before:-inset-2 before:rounded-full before:border before:border-white/5">
                     <Clock className="m-auto size-5 text-primary" strokeWidth={1} />
@@ -118,7 +118,7 @@ const ProblemSolution = () => {
                     <h2 className="text-lg font-medium text-white">
                       Disponible 24/7, 365 jours
                     </h2>
-                    <p className="text-white/50 text-sm">
+                    <p className="text-white/80 text-sm">
                       Pas de vacances. Pas de pauses café. Pas de jours
                       fériés. Votre assistant ne dort jamais et répond à
                       chaque appel, même à 3h du matin.
@@ -143,7 +143,7 @@ const ProblemSolution = () => {
                         <span className="text-primary font-mono font-semibold w-10">
                           {log.time}
                         </span>
-                        <span className="text-white/60">{log.text}</span>
+                        <span className="text-white/80">{log.text}</span>
                       </div>
                     ))}
                   </div>
@@ -153,7 +153,7 @@ const ProblemSolution = () => {
 
             {/* Card 5 — Aucun engagement */}
             <GlowCard customSize glowColor="blue" className="col-span-full overflow-hidden lg:col-span-3 bg-white/[0.03]">
-              <CardContent className="grid pt-6 sm:grid-cols-2">
+              <CardContent className="grid p-8 sm:grid-cols-2">
                 <div className="relative z-10 flex flex-col justify-between space-y-12 lg:space-y-6">
                   <div className="relative flex aspect-square size-12 rounded-full border border-white/10 before:absolute before:-inset-2 before:rounded-full before:border before:border-white/5">
                     <Shield className="m-auto size-5 text-primary" strokeWidth={1} />
@@ -162,7 +162,7 @@ const ProblemSolution = () => {
                     <h2 className="text-lg font-medium text-white">
                       Zéro risque, zéro engagement
                     </h2>
-                    <p className="text-white/50 text-sm">
+                    <p className="text-white/80 text-sm">
                       Pas de contrat à long terme. On installe, on ajuste,
                       vous décidez. Si ça ne vous convient pas, annulez
                       quand vous voulez. C'est aussi simple que ça.
@@ -185,17 +185,17 @@ const ProblemSolution = () => {
                           {item.icon}
                         </div>
                         <div>
-                          <div className="text-xs text-white/40">{item.label}</div>
+                          <div className="text-xs text-white/70">{item.label}</div>
                           <div className="text-sm font-medium text-white">{item.value}</div>
                         </div>
                       </div>
                     ))}
                     <div className="mt-4 pt-4 border-t border-white/10">
-                      <div className="text-xs text-white/40">Résultat</div>
+                      <div className="text-xs text-white/70">Résultat</div>
                       <div className="text-lg font-bold text-primary">
                         +15 000$/mois récupérés
                       </div>
-                      <div className="text-xs text-white/50">
+                      <div className="text-xs text-white/80">
                         en moyenne pour nos clients
                       </div>
                     </div>

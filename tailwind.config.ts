@@ -131,12 +131,18 @@ export default {
             backgroundPosition: "350% 50%, 350% 50%",
           },
         },
+        shine: {
+          "0%": { "background-position": "0% 0%" },
+          "50%": { "background-position": "100% 100%" },
+          to: { "background-position": "0% 0%" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
         aurora: "aurora 60s linear infinite",
+        shine: "shine var(--duration) infinite linear",
       },
     },
   },

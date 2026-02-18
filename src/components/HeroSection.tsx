@@ -1,7 +1,7 @@
 import { Play, Clock, Subtitles } from "lucide-react";
 import { LiquidButton } from "@/components/ui/liquid-glass-button";
 import { Web3MediaHero } from "@/components/ui/web3media-hero";
-import { BorderBeam } from "@/components/ui/border-beam";
+import { ShineBorder } from "@/components/ui/shine-border";
 import { motion } from "framer-motion";
 
 interface HeroSectionProps {
@@ -31,7 +31,7 @@ const HeroSection = ({ videoUrl = null }: HeroSectionProps) => {
           </h1>
 
           {/* Subtitle */}
-          <p className="text-lg md:text-xl text-foreground/60 max-w-3xl leading-relaxed font-medium">
+          <p className="text-lg md:text-xl text-foreground/80 max-w-3xl leading-relaxed font-medium">
             Calendia Pro répond à chaque appel 24/7, prend des rendez-vous
             automatiquement et vous envoie des résumés en temps réel. À partir
             de 99$/mois.
@@ -62,60 +62,43 @@ const HeroSection = ({ videoUrl = null }: HeroSectionProps) => {
           className="relative w-full max-w-[1100px] mx-auto px-4 mt-12 md:mt-16"
           style={{ marginBottom: "-160px" }}
         >
-          {/* Centered radial glow behind video */}
-          <div
-            className="absolute -inset-16 pointer-events-none z-0"
-            style={{
-              backgroundImage:
-                "radial-gradient(circle at center, rgba(0, 102, 255, 0.07) 0%, transparent 60%)",
-              filter: "blur(40px)",
-            }}
-          />
-
-          <div className="relative z-10 rounded-[20px]">
-            <div
-              className="overflow-hidden rounded-[20px] border border-black/10 shadow-2xl"
-              style={{ background: "#fff" }}
-            >
-              {videoUrl ? (
-                <div className="aspect-video">
-                  <iframe
-                    src={videoUrl}
-                    className="w-full h-full"
-                    allow="autoplay; fullscreen"
-                    allowFullScreen
-                    title="Calendia Pro Demo"
+          <ShineBorder
+            borderRadius={20}
+            borderWidth={2}
+            duration={10}
+            color={["#0066ff", "#00ccff", "#0066ff"]}
+            className="relative w-full min-w-full !p-0 overflow-hidden shadow-2xl"
+          >
+            {videoUrl ? (
+              <div className="aspect-video">
+                <iframe
+                  src={videoUrl}
+                  className="w-full h-full"
+                  allow="autoplay; fullscreen"
+                  allowFullScreen
+                  title="Calendia Pro Demo"
+                />
+              </div>
+            ) : (
+              <div
+                className="aspect-video relative flex items-center justify-center cursor-pointer group"
+                style={{
+                  background:
+                    "linear-gradient(135deg, #f8faff 0%, #e8efff 100%)",
+                }}
+              >
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 md:w-28 md:h-28 rounded-full bg-primary/80 backdrop-blur-sm flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform border border-primary/20">
+                  <Play
+                    className="w-10 h-10 md:w-12 md:h-12 text-white ml-1"
+                    fill="currentColor"
                   />
                 </div>
-              ) : (
-                <div
-                  className="aspect-video relative flex items-center justify-center cursor-pointer group"
-                  style={{
-                    background:
-                      "linear-gradient(135deg, #f8faff 0%, #e8efff 100%)",
-                  }}
-                >
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 md:w-28 md:h-28 rounded-full bg-primary/80 backdrop-blur-sm flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform border border-primary/20">
-                    <Play
-                      className="w-10 h-10 md:w-12 md:h-12 text-white ml-1"
-                      fill="currentColor"
-                    />
-                  </div>
-                </div>
-              )}
-            </div>
-            <BorderBeam
-              size={250}
-              duration={12}
-              borderWidth={1.5}
-              colorFrom="#0066ff"
-              colorTo="#00ccff"
-              delay={0}
-            />
-          </div>
+              </div>
+            )}
+          </ShineBorder>
 
           {/* Sub-text */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-6 text-foreground/50 text-sm">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-6 text-foreground/70 text-sm">
             <span>
               Regardez comment Calendia répond à vos appels en moins de 3
               minutes

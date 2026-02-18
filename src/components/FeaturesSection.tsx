@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { LiquidButton } from "@/components/ui/liquid-glass-button";
+import { WorldMap } from "@/components/ui/world-map";
 import {
   CalendarCheck,
   Headphones,
@@ -12,13 +13,40 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 
+// Quebec city connections — Montréal as hub
+const quebecDots = [
+  {
+    start: { lat: 45.5017, lng: -73.5673, label: "Montréal" },
+    end: { lat: 46.8139, lng: -71.208, label: "Québec" },
+  },
+  {
+    start: { lat: 45.5017, lng: -73.5673, label: "Montréal" },
+    end: { lat: 45.4765, lng: -75.7013, label: "Gatineau" },
+  },
+  {
+    start: { lat: 45.5017, lng: -73.5673, label: "Montréal" },
+    end: { lat: 45.4042, lng: -71.8929, label: "Sherbrooke" },
+  },
+  {
+    start: { lat: 46.8139, lng: -71.208, label: "Québec" },
+    end: { lat: 48.4279, lng: -71.0548, label: "Saguenay" },
+  },
+  {
+    start: { lat: 46.8139, lng: -71.208, label: "Québec" },
+    end: { lat: 48.8316, lng: -64.4874, label: "Gaspé" },
+  },
+  {
+    start: { lat: 45.5017, lng: -73.5673, label: "Montréal" },
+    end: { lat: 46.3432, lng: -72.5432, label: "Trois-Rivières" },
+  },
+];
+
 export default function FeaturesSection() {
   return (
     <section
       id="comment-ca-marche"
       className="relative py-14 md:py-20 overflow-hidden bg-background border-t border-border"
     >
-
       <div className="relative z-10 mx-auto max-w-5xl px-6">
         {/* Header */}
         <motion.div
@@ -31,13 +59,13 @@ export default function FeaturesSection() {
           <h2 className="text-3xl md:text-4xl font-semibold text-foreground tracking-tight">
             Comment ça <span className="text-primary">marche</span>
           </h2>
-          <p className="mt-4 text-base md:text-lg text-foreground/50 font-medium max-w-2xl mx-auto">
+          <p className="mt-4 text-base md:text-lg text-foreground/80 font-medium max-w-2xl mx-auto">
             On s'occupe de tout, de A à Z. Vous restez concentré sur votre
             entreprise.
           </p>
         </motion.div>
 
-        {/* Feature cards grid */}
+        {/* Feature cards grid — BIGGER cards */}
         <div className="mt-16 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           {/* Card 1 — Configuration */}
           <motion.div
@@ -46,24 +74,23 @@ export default function FeaturesSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0 }}
           >
-            <Card className="overflow-hidden p-6 bg-muted border-border/60 shadow-sm hover:shadow-md transition-all duration-300 h-full">
-              <Settings className="text-primary size-5" />
-              <h3 className="text-foreground mt-5 text-lg font-semibold">
+            <Card className="overflow-hidden p-8 bg-muted border-border/60 shadow-sm hover:shadow-md transition-all duration-300 h-full">
+              <Settings className="text-primary size-6" />
+              <h3 className="text-foreground mt-5 text-xl font-semibold">
                 Configuration sur mesure
               </h3>
-              <p className="text-foreground/50 mt-3 text-balance">
+              <p className="text-foreground/80 mt-3 text-balance">
                 Un appel d'onboarding pour comprendre votre entreprise, puis on
                 construit votre assistant vocal personnalisé. Prêt en 1 à 3
                 semaines.
               </p>
 
-              {/* Illustration — Onboarding card */}
               <Card className="mt-9 aspect-video p-4 bg-background">
                 <div className="mb-0.5 text-sm font-semibold">
                   Appel d'onboarding
                 </div>
                 <div className="mb-4 flex gap-2 text-sm">
-                  <span className="text-muted-foreground">
+                  <span className="text-foreground/60">
                     Configuration personnalisée
                   </span>
                 </div>
@@ -80,7 +107,7 @@ export default function FeaturesSection() {
                     </div>
                   ))}
                 </div>
-                <div className="text-muted-foreground text-sm font-medium">
+                <div className="text-foreground/60 text-sm font-medium">
                   Ton, vocabulaire, scénarios
                 </div>
               </Card>
@@ -94,28 +121,27 @@ export default function FeaturesSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.15 }}
           >
-            <Card className="group overflow-hidden px-6 pt-6 bg-muted border-border/60 shadow-sm hover:shadow-md transition-all duration-300 h-full">
-              <PhoneIncoming className="text-primary size-5" />
-              <h3 className="text-foreground mt-5 text-lg font-semibold">
+            <Card className="group overflow-hidden px-8 pt-8 bg-muted border-border/60 shadow-sm hover:shadow-md transition-all duration-300 h-full">
+              <PhoneIncoming className="text-primary size-6" />
+              <h3 className="text-foreground mt-5 text-xl font-semibold">
                 Réponse intelligente 24/7
               </h3>
-              <p className="text-foreground/50 mt-3 text-balance">
+              <p className="text-foreground/80 mt-3 text-balance">
                 Votre assistant décroche chaque appel avec le ton de votre
                 entreprise. Il qualifie les leads, prend les rendez-vous et
                 transfère les urgences.
               </p>
 
-              {/* Illustration — Call flow */}
               <div aria-hidden className="relative mt-6">
                 <Card className="aspect-video w-4/5 translate-y-4 p-3 transition-transform duration-200 ease-in-out group-hover:-rotate-3 bg-background">
                   <div className="mb-3 flex items-center gap-2">
                     <div className="bg-emerald-500 size-6 rounded-full flex items-center justify-center">
                       <Phone className="size-3 text-white" />
                     </div>
-                    <span className="text-muted-foreground text-sm font-medium">
+                    <span className="text-foreground/60 text-sm font-medium">
                       Appel entrant
                     </span>
-                    <span className="text-muted-foreground/75 text-xs">
+                    <span className="text-foreground/40 text-xs">
                       Maintenant
                     </span>
                   </div>
@@ -142,17 +168,16 @@ export default function FeaturesSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <Card className="group overflow-hidden px-6 pt-6 bg-muted border-border/60 shadow-sm hover:shadow-md transition-all duration-300 h-full">
-              <Headphones className="text-primary size-5" />
-              <h3 className="text-foreground mt-5 text-lg font-semibold">
+            <Card className="group overflow-hidden px-8 pt-8 bg-muted border-border/60 shadow-sm hover:shadow-md transition-all duration-300 h-full">
+              <Headphones className="text-primary size-6" />
+              <h3 className="text-foreground mt-5 text-xl font-semibold">
                 Contrôle total et résumés
               </h3>
-              <p className="text-foreground/50 mt-3 text-balance">
+              <p className="text-foreground/80 mt-3 text-balance">
                 Résumé par courriel et fiche CRM après chaque appel. Besoin d'un
                 ajustement? On s'en occupe. Aucun engagement.
               </p>
 
-              {/* Illustration — Summary card */}
               <div className="mask-b-from-50 -mx-2 -mt-2 px-2 pt-2">
                 <Card
                   aria-hidden
@@ -166,7 +191,7 @@ export default function FeaturesSection() {
                     </p>
                   </div>
                   <div className="bg-foreground/5 -mx-3 -mb-3 mt-3 space-y-3 rounded-lg p-3">
-                    <div className="text-muted-foreground text-sm">
+                    <div className="text-foreground/60 text-sm">
                       Envoyé au CRM
                     </div>
                     <div className="flex justify-between">
@@ -188,6 +213,29 @@ export default function FeaturesSection() {
             </Card>
           </motion.div>
         </div>
+
+        {/* Map section — INSIDE features, below cards */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="mt-20"
+        >
+          <div className="text-center mb-8">
+            <h3 className="text-2xl md:text-3xl font-bold text-foreground">
+              L'IA qui parle québécois, de{" "}
+              <span className="text-primary">Gatineau à Gaspé</span>.
+            </h3>
+            <p className="mt-3 text-base md:text-lg text-foreground/80 font-medium max-w-2xl mx-auto">
+              Chaque appel manqué est une vente qui va au concurrent. On couvre
+              votre territoire 24/7 pour une fraction du prix d'une
+              réceptionniste.
+            </p>
+          </div>
+
+          <WorldMap dots={quebecDots} lineColor="#0066ff" />
+        </motion.div>
 
         {/* CTA */}
         <motion.div

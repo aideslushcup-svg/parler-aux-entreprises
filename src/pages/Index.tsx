@@ -2,7 +2,6 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import VideoPlayer from "@/components/VideoPlayer";
 import ProblemSolution from "@/components/ProblemSolution";
-import GlobeSection from "@/components/GlobeSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import PricingSection from "@/components/PricingSection";
 import IntegrationsSection from "@/components/IntegrationsSection";
@@ -17,7 +16,6 @@ const Index = () => {
         <HeroSection videoUrl={null} />
         <VideoPlayer />
         <ProblemSolution />
-        <GlobeSection />
         <FeaturesSection />
         <PricingSection />
         <IntegrationsSection />
