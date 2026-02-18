@@ -16,27 +16,8 @@ export default function FeaturesSection() {
   return (
     <section
       id="comment-ca-marche"
-      className="relative py-20 md:py-32 overflow-hidden"
-      style={{
-        background:
-          "linear-gradient(180deg, #f0f4ff 0%, #e8efff 50%, #f0f4ff 100%)",
-      }}
+      className="relative py-14 md:py-20 overflow-hidden bg-background border-t border-border"
     >
-      {/* Subtle glow accents */}
-      <div
-        className="absolute top-0 left-1/4 w-96 h-96 pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(0,102,255,0.06) 0%, transparent 70%)",
-        }}
-      />
-      <div
-        className="absolute bottom-0 right-1/4 w-96 h-96 pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(0,102,255,0.04) 0%, transparent 70%)",
-        }}
-      />
 
       <div className="relative z-10 mx-auto max-w-5xl px-6">
         {/* Header */}
@@ -47,10 +28,10 @@ export default function FeaturesSection() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-tight">
+          <h2 className="text-3xl md:text-4xl font-semibold text-foreground tracking-tight">
             Comment ça <span className="text-primary">marche</span>
           </h2>
-          <p className="mt-5 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="mt-4 text-base md:text-lg text-foreground/50 font-medium max-w-2xl mx-auto">
             On s'occupe de tout, de A à Z. Vous restez concentré sur votre
             entreprise.
           </p>
@@ -65,12 +46,12 @@ export default function FeaturesSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0 }}
           >
-            <Card className="overflow-hidden p-6 bg-white/80 backdrop-blur-sm border-primary/10 hover:shadow-xl hover:border-primary/20 transition-all duration-300 h-full">
+            <Card className="overflow-hidden p-6 bg-muted border-border/60 shadow-sm hover:shadow-md transition-all duration-300 h-full">
               <Settings className="text-primary size-5" />
               <h3 className="text-foreground mt-5 text-lg font-semibold">
                 Configuration sur mesure
               </h3>
-              <p className="text-muted-foreground mt-3 text-balance">
+              <p className="text-foreground/50 mt-3 text-balance">
                 Un appel d'onboarding pour comprendre votre entreprise, puis on
                 construit votre assistant vocal personnalisé. Prêt en 1 à 3
                 semaines.
@@ -113,12 +94,12 @@ export default function FeaturesSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.15 }}
           >
-            <Card className="group overflow-hidden px-6 pt-6 bg-white/80 backdrop-blur-sm border-primary/10 hover:shadow-xl hover:border-primary/20 transition-all duration-300 h-full">
+            <Card className="group overflow-hidden px-6 pt-6 bg-muted border-border/60 shadow-sm hover:shadow-md transition-all duration-300 h-full">
               <PhoneIncoming className="text-primary size-5" />
               <h3 className="text-foreground mt-5 text-lg font-semibold">
                 Réponse intelligente 24/7
               </h3>
-              <p className="text-muted-foreground mt-3 text-balance">
+              <p className="text-foreground/50 mt-3 text-balance">
                 Votre assistant décroche chaque appel avec le ton de votre
                 entreprise. Il qualifie les leads, prend les rendez-vous et
                 transfère les urgences.
@@ -161,12 +142,12 @@ export default function FeaturesSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <Card className="group overflow-hidden px-6 pt-6 bg-white/80 backdrop-blur-sm border-primary/10 hover:shadow-xl hover:border-primary/20 transition-all duration-300 h-full">
+            <Card className="group overflow-hidden px-6 pt-6 bg-muted border-border/60 shadow-sm hover:shadow-md transition-all duration-300 h-full">
               <Headphones className="text-primary size-5" />
               <h3 className="text-foreground mt-5 text-lg font-semibold">
                 Contrôle total et résumés
               </h3>
-              <p className="text-muted-foreground mt-3 text-balance">
+              <p className="text-foreground/50 mt-3 text-balance">
                 Résumé par courriel et fiche CRM après chaque appel. Besoin d'un
                 ajustement? On s'en occupe. Aucun engagement.
               </p>

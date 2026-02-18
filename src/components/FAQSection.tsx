@@ -34,9 +34,9 @@ const faqs = [
 
 const FAQSection = () => {
   return (
-    <section id="faq" className="section-padding bg-background">
-      <div className="container-narrow">
-        <h2 className="text-3xl md:text-h2 font-bold text-foreground text-center mb-12">
+    <section id="faq" className="py-14 md:py-20 bg-background border-t border-border">
+      <div className="mx-auto max-w-5xl px-6">
+        <h2 className="text-3xl md:text-4xl font-semibold text-foreground text-center mb-12">
           Questions fréquentes
         </h2>
 
@@ -50,7 +50,7 @@ const FAQSection = () => {
               <AccordionTrigger className="text-left text-base md:text-lg font-semibold text-foreground py-5 hover:no-underline">
                 {faq.q}
               </AccordionTrigger>
-              <AccordionContent className="text-text-secondary text-sm leading-relaxed pb-5">
+              <AccordionContent className="text-foreground/50 text-sm leading-relaxed pb-5">
                 {faq.a}
               </AccordionContent>
             </AccordionItem>

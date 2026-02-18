@@ -141,8 +141,8 @@ const integrationIcons: FloatingIconsHeroProps['icons'] = [
 
 const IntegrationsSection = () => {
   return (
-    <section className="section-padding bg-ice">
-      <div className="container-narrow">
+    <section className="py-14 md:py-20 bg-background border-t border-border">
+      <div className="mx-auto max-w-5xl px-6">
         <FloatingIconsHero
           title="S'intègre avec vos outils"
           subtitle="Plus de 1 000 intégrations disponibles"

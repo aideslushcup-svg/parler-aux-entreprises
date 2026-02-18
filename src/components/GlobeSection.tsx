@@ -134,7 +134,7 @@ function Globe({
 
 const GlobeSection = () => {
   return (
-    <section className="relative py-16 md:py-24 overflow-hidden">
+    <section className="relative py-10 md:py-14 overflow-hidden bg-background">
       <div className="relative mx-auto max-w-5xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -148,7 +148,7 @@ const GlobeSection = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight">
                 On aide les entreprises de{" "}
                 <span className="text-primary">partout au Québec</span>{" "}
-                <span className="text-muted-foreground font-normal">
+                <span className="text-foreground/50 font-normal">
                   à ne plus jamais manquer un appel. De Montréal à Rimouski, votre
                   réceptionniste IA répond 24/7 avec l'accent d'ici.
                 </span>

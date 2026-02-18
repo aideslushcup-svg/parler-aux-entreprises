@@ -16,7 +16,7 @@ const HeroSection = ({ videoUrl = null }: HeroSectionProps) => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="flex flex-col items-center text-center max-w-5xl gap-8 px-4"
+          className="flex flex-col items-center text-center max-w-3xl gap-5 px-4"
         >
           {/* Badge */}
           <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-primary/10 text-primary text-base font-semibold border border-primary/20">
@@ -25,13 +25,13 @@ const HeroSection = ({ videoUrl = null }: HeroSectionProps) => {
           </div>
 
           {/* Title */}
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-foreground tracking-tight leading-[1.05]">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground tracking-tight leading-[1.1]">
             Ne manquez plus{" "}
             <span className="text-primary">jamais</span> un appel.
           </h1>
 
           {/* Subtitle */}
-          <p className="text-xl md:text-2xl lg:text-[1.7rem] text-muted-foreground max-w-3xl leading-relaxed">
+          <p className="text-lg md:text-xl text-foreground/60 max-w-3xl leading-relaxed font-medium">
             Calendia Pro répond à chaque appel 24/7, prend des rendez-vous
             automatiquement et vous envoie des résumés en temps réel. À partir
             de 99$/mois.
@@ -115,7 +115,7 @@ const HeroSection = ({ videoUrl = null }: HeroSectionProps) => {
           </div>
 
           {/* Sub-text */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-6 text-muted-foreground text-base">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-6 text-foreground/50 text-sm">
             <span>
               Regardez comment Calendia répond à vos appels en moins de 3
               minutes

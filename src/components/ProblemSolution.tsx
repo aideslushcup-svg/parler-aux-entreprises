@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 const ProblemSolution = () => {
   return (
     <section
-      className="py-20 md:py-32"
+      className="py-14 md:py-20"
       style={{
         background:
           "linear-gradient(180deg, #071230 0%, #0a1628 50%, #020817 100%)",
@@ -21,11 +21,11 @@ const ProblemSolution = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12 md:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight">
+          <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
             Pourquoi choisir{" "}
             <span className="text-primary">Calendia</span> ?
           </h2>
-          <p className="mt-5 text-lg md:text-xl text-white/50 max-w-xl mx-auto">
+          <p className="mt-4 text-base md:text-lg text-white/60 font-medium max-w-xl mx-auto">
             Chaque appel manqué, c'est un client perdu. Voici pourquoi 500+
             entreprises nous font confiance.
           </p>

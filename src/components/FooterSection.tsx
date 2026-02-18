@@ -19,10 +19,10 @@ const footerLinks = {
 
 const FooterSection = () => {
   return (
-    <footer id="cta-final" className="bg-white text-foreground">
+    <footer id="cta-final" className="bg-white text-foreground border-t border-border">
       {/* CTA Block */}
-      <div className="section-padding border-b border-border/40">
-        <div className="container-narrow text-center max-w-2xl">
+      <div className="py-14 md:py-20 border-b border-border/40">
+        <div className="mx-auto max-w-5xl px-6 text-center max-w-2xl">
           <h2 className="text-2xl md:text-4xl font-bold mb-4 text-foreground">
             Prêt à ne plus jamais manquer un appel?
           </h2>
@@ -41,7 +41,7 @@ const FooterSection = () => {
 
       {/* Footer links */}
       <div className="py-12 md:py-16">
-        <div className="container-narrow">
+        <div className="mx-auto max-w-5xl px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {/* Brand */}
             <div className="col-span-2 md:col-span-1">
@@ -76,7 +76,7 @@ const FooterSection = () => {
 
       {/* Bottom bar */}
       <div className="border-t border-border/40 py-6">
-        <div className="container-narrow flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground/70">
+        <div className="mx-auto max-w-5xl px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground/70">
           <span>© 2026 Calendia Pro. Tous droits réservés. Fait au Québec 🇨🇦</span>
           <div className="flex items-center gap-4">
             {["LinkedIn", "Facebook", "Instagram"].map((s) => (
