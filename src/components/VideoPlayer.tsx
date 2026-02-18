@@ -1,5 +1,16 @@
 import { motion } from "framer-motion";
-import { LogoCloud } from "@/components/ui/logo-cloud";
+import { InfiniteTextCarousel } from "@/components/ui/infinite-text-carousel";
+
+const industries = [
+  "PME",
+  "Construction",
+  "Clinique",
+  "Courtier immobilier",
+  "Restaurant",
+  "Hôtel",
+  "Déménagement",
+  "Cabinet",
+];
 
 const VideoPlayer = () => {
   return (
@@ -17,7 +28,14 @@ const VideoPlayer = () => {
             Québec
           </h3>
 
-          <LogoCloud />
+          <InfiniteTextCarousel
+            texts={industries}
+            gap={64}
+            duration={30}
+            durationOnHover={50}
+            className="py-8"
+            textClassName="text-4xl md:text-5xl font-bold"
+          />
         </motion.div>
       </div>
     </section>

@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { LiquidButton } from "@/components/ui/liquid-glass-button";
 import { WorldMap } from "@/components/ui/world-map";
+import { MeshBackground } from "@/components/ui/mesh-background";
 import {
   CalendarCheck,
   Headphones,
@@ -20,8 +21,10 @@ export default function FeaturesSection() {
   return (
     <section
       id="comment-ca-marche"
-      className="relative py-14 md:py-20 overflow-hidden bg-background border-t border-border"
+      className="relative py-14 md:py-20 overflow-hidden bg-background"
     >
+      <MeshBackground />
+
       <div className="relative z-10 mx-auto max-w-5xl px-6">
         {/* Header */}
         <motion.div
