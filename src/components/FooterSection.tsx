@@ -1,5 +1,4 @@
 import { LiquidButton } from "@/components/ui/liquid-glass-button";
-import { CalendiaLogo } from "@/components/ui/calendia-logo";
 
 const footerLinks = {
   Produit: [
@@ -46,9 +45,8 @@ const FooterSection = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {/* Brand */}
             <div className="col-span-2 md:col-span-1">
-              <div className="text-lg font-bold mb-3 flex items-center gap-2">
-                <CalendiaLogo size={24} />
-                Calendia
+              <div className="mb-3">
+                <img src="/calendia-logo.png" alt="Calendia" className="h-12" />
               </div>
               <p className="text-sm text-muted-foreground">
                 Votre réceptionniste IA, avec l'accent d'ici.
