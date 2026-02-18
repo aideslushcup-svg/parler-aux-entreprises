@@ -218,10 +218,8 @@ export default function FeaturesSection() {
             </p>
           </div>
 
-          <GradientCard className="w-full p-1">
-            <div className="rounded-xl overflow-hidden">
-              <WorldMap markers={quebecMarker} lineColor="#0066ff" />
-            </div>
+          <GradientCard borderOnly className="w-full">
+            <WorldMap markers={quebecMarker} lineColor="#0066ff" />
           </GradientCard>
         </motion.div>
 

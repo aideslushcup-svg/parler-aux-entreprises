@@ -43,8 +43,8 @@ const VideoPlayer = () => {
           <InfiniteTextCarousel
             texts={industries}
             gap={64}
-            duration={80}
-            durationOnHover={120}
+            duration={150}
+            durationOnHover={200}
             className="py-8"
             textClassName="text-4xl md:text-5xl font-bold"
           />
