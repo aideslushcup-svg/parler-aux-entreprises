@@ -1,7 +1,7 @@
 import { Play, Clock, Subtitles } from "lucide-react";
 import { LiquidButton } from "@/components/ui/liquid-glass-button";
 import { Web3MediaHero } from "@/components/ui/web3media-hero";
-import { ShineBorder } from "@/components/ui/shine-border";
+import { CardCanvas, GlowCard } from "@/components/ui/animated-glow-card";
 import { motion } from "framer-motion";
 
 interface HeroSectionProps {
@@ -62,40 +62,36 @@ const HeroSection = ({ videoUrl = null }: HeroSectionProps) => {
           className="relative w-full max-w-[1100px] mx-auto px-4 mt-12 md:mt-16"
           style={{ marginBottom: "-160px" }}
         >
-          <ShineBorder
-            borderRadius={20}
-            borderWidth={2}
-            duration={10}
-            color={["#0066ff", "#00ccff", "#0066ff"]}
-            className="relative w-full min-w-full !p-0 overflow-hidden shadow-2xl"
-          >
-            {videoUrl ? (
-              <div className="aspect-video">
-                <iframe
-                  src={videoUrl}
-                  className="w-full h-full"
-                  allow="autoplay; fullscreen"
-                  allowFullScreen
-                  title="Calendia Pro Demo"
-                />
-              </div>
-            ) : (
-              <div
-                className="aspect-video relative flex items-center justify-center cursor-pointer group"
-                style={{
-                  background:
-                    "linear-gradient(135deg, #f8faff 0%, #e8efff 100%)",
-                }}
-              >
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 md:w-28 md:h-28 rounded-full bg-primary/80 backdrop-blur-sm flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform border border-primary/20">
-                  <Play
-                    className="w-10 h-10 md:w-12 md:h-12 text-white ml-1"
-                    fill="currentColor"
+          <CardCanvas>
+            <GlowCard className="w-full">
+              {videoUrl ? (
+                <div className="aspect-video">
+                  <iframe
+                    src={videoUrl}
+                    className="w-full h-full"
+                    allow="autoplay; fullscreen"
+                    allowFullScreen
+                    title="Calendia Pro Demo"
                   />
                 </div>
-              </div>
-            )}
-          </ShineBorder>
+              ) : (
+                <div
+                  className="aspect-video relative flex items-center justify-center cursor-pointer group"
+                  style={{
+                    background:
+                      "linear-gradient(135deg, #f8faff 0%, #e8efff 100%)",
+                  }}
+                >
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 md:w-28 md:h-28 rounded-full bg-primary/80 backdrop-blur-sm flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform border border-primary/20">
+                    <Play
+                      className="w-10 h-10 md:w-12 md:h-12 text-white ml-1"
+                      fill="currentColor"
+                    />
+                  </div>
+                </div>
+              )}
+            </GlowCard>
+          </CardCanvas>
 
           {/* Sub-text */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-6 text-foreground/70 text-sm">

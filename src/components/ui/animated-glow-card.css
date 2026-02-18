@@ -1,0 +1,136 @@
+.card-canvas {
+  position: relative;
+  width: 100%;
+}
+
+.card-backdrop {
+  position: absolute;
+  inset: -30px;
+  border-radius: 40px;
+  background: radial-gradient(
+    ellipse at 50% 50%,
+    rgba(0, 102, 255, 0.15),
+    rgba(0, 102, 255, 0.06) 50%,
+    transparent 75%
+  );
+  filter: url(#unopaq) blur(25px);
+  pointer-events: none;
+  animation: glow-pulse 4s ease-in-out infinite;
+  z-index: 0;
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+.glow-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  background: white;
+  box-shadow:
+    0 0 0 1px rgba(0, 102, 255, 0.08),
+    0 25px 60px -15px rgba(0, 0, 0, 0.12);
+  z-index: 1;
+}
+
+.border-element {
+  position: absolute;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.border-left {
+  left: 0;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(0, 102, 255, 0.5),
+    transparent
+  );
+  background-size: 100% 200%;
+  animation: shimmer-down 3s ease-in-out infinite;
+}
+
+.border-right {
+  right: 0;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(0, 102, 255, 0.5),
+    transparent
+  );
+  background-size: 100% 200%;
+  animation: shimmer-down 3s ease-in-out infinite 1.5s;
+}
+
+.border-top {
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(0, 102, 255, 0.5),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: shimmer-right 3s ease-in-out infinite 0.75s;
+}
+
+.border-bottom {
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(0, 102, 255, 0.5),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: shimmer-right 3s ease-in-out infinite 2.25s;
+}
+
+@keyframes shimmer-down {
+  0% {
+    background-position: 0 -100%;
+  }
+  50% {
+    background-position: 0 100%;
+  }
+  100% {
+    background-position: 0 -100%;
+  }
+}
+
+@keyframes shimmer-right {
+  0% {
+    background-position: -100% 0;
+  }
+  50% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+.card-content {
+  position: relative;
+  z-index: 1;
+}

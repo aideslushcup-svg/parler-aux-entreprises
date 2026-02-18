@@ -13,33 +13,8 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 
-// Quebec city connections — Montréal as hub
-const quebecDots = [
-  {
-    start: { lat: 45.5017, lng: -73.5673, label: "Montréal" },
-    end: { lat: 46.8139, lng: -71.208, label: "Québec" },
-  },
-  {
-    start: { lat: 45.5017, lng: -73.5673, label: "Montréal" },
-    end: { lat: 45.4765, lng: -75.7013, label: "Gatineau" },
-  },
-  {
-    start: { lat: 45.5017, lng: -73.5673, label: "Montréal" },
-    end: { lat: 45.4042, lng: -71.8929, label: "Sherbrooke" },
-  },
-  {
-    start: { lat: 46.8139, lng: -71.208, label: "Québec" },
-    end: { lat: 48.4279, lng: -71.0548, label: "Saguenay" },
-  },
-  {
-    start: { lat: 46.8139, lng: -71.208, label: "Québec" },
-    end: { lat: 48.8316, lng: -64.4874, label: "Gaspé" },
-  },
-  {
-    start: { lat: 45.5017, lng: -73.5673, label: "Montréal" },
-    end: { lat: 46.3432, lng: -72.5432, label: "Trois-Rivières" },
-  },
-];
+// Single Quebec marker on the world map
+const quebecMarker = [{ lat: 46.8, lng: -71.2, label: "Québec" }];
 
 export default function FeaturesSection() {
   return (
@@ -234,7 +209,7 @@ export default function FeaturesSection() {
             </p>
           </div>
 
-          <WorldMap dots={quebecDots} lineColor="#0066ff" />
+          <WorldMap markers={quebecMarker} lineColor="#0066ff" />
         </motion.div>
 
         {/* CTA */}
