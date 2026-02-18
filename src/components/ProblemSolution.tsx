@@ -73,7 +73,7 @@ const ProblemSolution = () => {
                   </h2>
                   <p className="text-white/80 text-sm">
                     Une réceptionniste coûte 40 000$ à 60 000$/an.
-                    Calendia Pro commence à 99$/mois.
+                    Calendia commence à 99$/mois.
                   </p>
                 </div>
               </CardContent>

@@ -68,7 +68,7 @@ const PricingSection = () => {
                 <span className="absolute top-4 right-6 px-3 py-1 bg-primary text-primary-foreground text-xs font-semibold rounded-full">
                   Recommandé
                 </span>
-                <h3 className="text-xl font-semibold text-foreground mb-2">Calendia Pro</h3>
+                <h3 className="text-xl font-semibold text-foreground mb-2">Calendia</h3>
                 <div className="text-3xl font-bold text-primary mb-1">À partir de 99$/mois</div>
                 <p className="text-sm text-foreground/70 mb-6">+ 0,85$/minute d'utilisation</p>
                 <ul className="space-y-3">

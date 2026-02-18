@@ -1,4 +1,5 @@
 import { LiquidButton } from "@/components/ui/liquid-glass-button";
+import { CalendiaLogo } from "@/components/ui/calendia-logo";
 
 const footerLinks = {
   Produit: [
@@ -45,8 +46,9 @@ const FooterSection = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {/* Brand */}
             <div className="col-span-2 md:col-span-1">
-              <div className="text-lg font-bold mb-3">
-                <span className="text-primary">✦</span> Calendia Pro
+              <div className="text-lg font-bold mb-3 flex items-center gap-2">
+                <CalendiaLogo size={24} />
+                Calendia
               </div>
               <p className="text-sm text-muted-foreground">
                 Votre réceptionniste IA, avec l'accent d'ici.
@@ -77,7 +79,7 @@ const FooterSection = () => {
       {/* Bottom bar */}
       <div className="border-t border-border/40 py-6">
         <div className="mx-auto max-w-5xl px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground/70">
-          <span>© 2026 Calendia Pro. Tous droits réservés. Fait au Québec 🇨🇦</span>
+          <span>© 2026 Calendia. Tous droits réservés. Fait au Québec 🇨🇦</span>
           <div className="flex items-center gap-4">
             {["LinkedIn", "Facebook", "Instagram"].map((s) => (
               <a key={s} href="#" className="hover:text-foreground transition-colors">{s}</a>

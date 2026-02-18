@@ -121,22 +121,22 @@ const IconNotion = (props: React.SVGProps<SVGSVGElement>) => (
 );
 
 const integrationIcons: FloatingIconsHeroProps['icons'] = [
-  { id: 1, icon: IconGoogleCalendar, className: 'top-[8%] left-[12%]' },
-  { id: 2, icon: IconSlack, className: 'top-[15%] right-[10%]' },
-  { id: 3, icon: IconHubSpot, className: 'top-[75%] left-[8%]' },
-  { id: 4, icon: IconStripe, className: 'bottom-[12%] right-[12%]' },
-  { id: 5, icon: IconZapier, className: 'top-[5%] left-[35%]' },
-  { id: 6, icon: IconSalesforce, className: 'top-[8%] right-[32%]' },
-  { id: 7, icon: IconZoom, className: 'bottom-[10%] left-[28%]' },
-  { id: 8, icon: IconCalendly, className: 'top-[42%] left-[6%]' },
-  { id: 9, icon: IconShopify, className: 'top-[70%] right-[20%]' },
-  { id: 10, icon: IconMake, className: 'bottom-[5%] left-[55%]' },
-  { id: 11, icon: IconOutlook, className: 'top-[50%] right-[6%]' },
-  { id: 12, icon: IconAirtable, className: 'top-[60%] left-[22%]' },
-  { id: 13, icon: IconGoHighLevel, className: 'top-[5%] left-[58%]' },
-  { id: 14, icon: IconQuickBooks, className: 'bottom-[8%] right-[40%]' },
+  { id: 1, icon: IconGoogleCalendar, className: 'top-[12%] left-[14%]' },
+  { id: 2, icon: IconSlack, className: 'top-[15%] right-[12%]' },
+  { id: 3, icon: IconHubSpot, className: 'top-[72%] left-[10%]' },
+  { id: 4, icon: IconStripe, className: 'bottom-[14%] right-[14%]' },
+  { id: 5, icon: IconZapier, className: 'top-[10%] left-[35%]' },
+  { id: 6, icon: IconSalesforce, className: 'top-[12%] right-[32%]' },
+  { id: 7, icon: IconZoom, className: 'bottom-[14%] left-[28%]' },
+  { id: 8, icon: IconCalendly, className: 'top-[42%] left-[10%]' },
+  { id: 9, icon: IconShopify, className: 'top-[68%] right-[20%]' },
+  { id: 10, icon: IconMake, className: 'bottom-[12%] left-[52%]' },
+  { id: 11, icon: IconOutlook, className: 'top-[50%] right-[10%]' },
+  { id: 12, icon: IconAirtable, className: 'top-[58%] left-[22%]' },
+  { id: 13, icon: IconGoHighLevel, className: 'top-[10%] left-[56%]' },
+  { id: 14, icon: IconQuickBooks, className: 'bottom-[12%] right-[38%]' },
   { id: 15, icon: IconFreshbooks, className: 'top-[28%] right-[18%]' },
-  { id: 16, icon: IconNotion, className: 'top-[62%] left-[42%]' },
+  { id: 16, icon: IconNotion, className: 'top-[60%] left-[42%]' },
 ];
 
 const IntegrationsSection = () => {
@@ -152,7 +152,7 @@ const IntegrationsSection = () => {
         {/* Center hub */}
         <div className="flex justify-center -mt-8">
           <div className="px-5 py-2.5 bg-primary text-primary-foreground rounded-pill font-bold text-sm shadow-vsl-glow">
-            ✦ Calendia Pro
+            ✦ Calendia
           </div>
         </div>
       </div>

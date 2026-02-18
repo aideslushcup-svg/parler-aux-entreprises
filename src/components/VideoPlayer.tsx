@@ -40,20 +40,20 @@ const VideoPlayer = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="flex flex-col gap-6"
         >
-          <InfiniteTextCarousel
-            texts={industries}
-            gap={64}
-            duration={150}
-            durationOnHover={200}
-            className="py-8"
-            textClassName="text-4xl md:text-5xl font-bold"
-          />
-
           <h3 className="text-center text-lg md:text-2xl font-medium text-foreground/80 tracking-tight">
-            Des entreprises de toutes{" "}
-            <span className="font-semibold text-primary">tailles</span> au
+            Pour les{" "}
+            <span className="font-semibold text-primary">PME</span> du
             Québec
           </h3>
+
+          <InfiniteTextCarousel
+            texts={industries}
+            gap={48}
+            duration={150}
+            durationOnHover={200}
+            className="py-6"
+            textClassName="text-2xl md:text-3xl font-bold"
+          />
         </motion.div>
       </div>
     </section>

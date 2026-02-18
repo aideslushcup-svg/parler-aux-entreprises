@@ -32,7 +32,7 @@ const HeroSection = ({ videoUrl = null }: HeroSectionProps) => {
 
           {/* Subtitle */}
           <p className="text-lg md:text-xl text-foreground/80 max-w-3xl leading-relaxed font-medium">
-            Calendia Pro répond à chaque appel 24/7, prend des rendez-vous
+            Calendia répond à chaque appel 24/7, prend des rendez-vous
             automatiquement et vous envoie des résumés en temps réel. À partir
             de 99$/mois.
           </p>
@@ -71,7 +71,7 @@ const HeroSection = ({ videoUrl = null }: HeroSectionProps) => {
                     className="w-full h-full"
                     allow="autoplay; fullscreen"
                     allowFullScreen
-                    title="Calendia Pro Demo"
+                    title="Calendia Demo"
                   />
                 </div>
               ) : (

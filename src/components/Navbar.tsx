@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { LiquidButton } from "@/components/ui/liquid-glass-button";
+import { CalendiaLogo } from "@/components/ui/calendia-logo";
 
 const navLinks = [
   { label: "Comment ça marche", href: "#comment-ca-marche" },
@@ -28,8 +29,9 @@ const Navbar = () => {
         }`}
       >
         {/* Logo */}
-        <a href="#" className="flex items-center gap-1.5 text-foreground font-bold text-lg">
-          <span className="text-primary">✦</span> Calendia Pro
+        <a href="#" className="flex items-center gap-2 text-foreground font-bold text-lg">
+          <CalendiaLogo size={28} />
+          Calendia
         </a>
 
         {/* Desktop links */}
