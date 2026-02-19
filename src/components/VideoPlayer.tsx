@@ -31,7 +31,7 @@ const industries = [
 
 const VideoPlayer = () => {
   return (
-    <section className="relative pt-48 pb-14 bg-background">
+    <section className="relative pt-28 md:pt-48 pb-10 md:pb-14 bg-background">
       <div className="mx-auto max-w-5xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

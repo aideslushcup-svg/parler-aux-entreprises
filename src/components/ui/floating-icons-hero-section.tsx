@@ -77,7 +77,7 @@ const Icon = ({
           ease: 'easeInOut',
         }}
       >
-        <iconData.icon className="size-10 md:size-12" />
+        <iconData.icon className="size-8 md:size-12" />
       </motion.div>
     </motion.div>
   );
@@ -99,7 +99,7 @@ const FloatingIconsHero = React.forwardRef<
     <div
       ref={ref}
       className={cn(
-        'relative flex min-h-[400px] md:min-h-[500px] items-center justify-center overflow-hidden',
+        'relative flex min-h-[300px] md:min-h-[500px] items-center justify-center overflow-hidden',
         className
       )}
       onMouseMove={handleMouseMove}

@@ -1,4 +1,4 @@
-import { LiquidButton } from "@/components/ui/liquid-glass-button";
+import { GlowButton } from "@/components/ui/glow-button";
 
 const footerLinks = {
   Produit: [
@@ -31,7 +31,7 @@ const FooterSection = () => {
             comment Calendia peut s'adapter à votre entreprise.
           </p>
           <a href="#">
-            <LiquidButton size="xl">Réserver mon appel gratuit</LiquidButton>
+            <GlowButton size="xl">Réserver mon appel gratuit</GlowButton>
           </a>
           <p className="text-sm text-foreground/60 mt-4">
             Un appel découverte, puis on s'occupe de tout. Prêt en 1 à 3 semaines. Sans engagement.

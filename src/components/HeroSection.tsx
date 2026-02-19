@@ -1,5 +1,5 @@
 import { Play, Clock, Subtitles } from "lucide-react";
-import { LiquidButton } from "@/components/ui/liquid-glass-button";
+import { GlowButton } from "@/components/ui/glow-button";
 import { Web3MediaHero } from "@/components/ui/web3media-hero";
 import { CardCanvas, GlowCard } from "@/components/ui/animated-glow-card";
 import { motion } from "framer-motion";
@@ -10,7 +10,7 @@ interface HeroSectionProps {
 
 const HeroSection = ({ videoUrl = null }: HeroSectionProps) => {
   return (
-    <Web3MediaHero className="pt-28 pb-0 md:pt-32">
+    <Web3MediaHero className="pt-24 pb-0 md:pt-32">
       <div className="flex flex-col items-center text-center w-full">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -19,7 +19,7 @@ const HeroSection = ({ videoUrl = null }: HeroSectionProps) => {
           className="flex flex-col items-center text-center max-w-3xl gap-5 px-4"
         >
           {/* Badge */}
-          <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-primary/10 text-primary text-base font-semibold border border-primary/20">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm md:text-base font-semibold border border-primary/20">
             <span className="w-2.5 h-2.5 rounded-full bg-primary animate-pulse" />
             Réceptionniste IA #1 au Québec
           </div>
@@ -31,23 +31,19 @@ const HeroSection = ({ videoUrl = null }: HeroSectionProps) => {
           </h1>
 
           {/* Subtitle */}
-          <p className="text-lg md:text-xl text-foreground/80 max-w-3xl leading-relaxed font-medium">
+          <p className="text-base md:text-xl text-foreground/80 max-w-3xl leading-relaxed font-medium">
             Calendia répond à chaque appel 24/7, prend des rendez-vous
             automatiquement et vous envoie des résumés en temps réel. À partir
             de 99$/mois.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center gap-5 pt-4">
-            <a href="#cta-final">
-              <LiquidButton size="lg" className="text-lg px-10 py-5 h-auto font-bold">
-                Réserver un appel
-              </LiquidButton>
+          <div className="flex flex-col sm:flex-row items-center gap-4 pt-4 w-full sm:w-auto">
+            <a href="#cta-final" className="w-full sm:w-auto">
+              <GlowButton size="lg" className="w-full sm:w-auto md:glow-btn-xl">Réserver un appel</GlowButton>
             </a>
-            <a href="#vsl">
-              <LiquidButton variant="outline" size="lg" className="text-lg px-10 py-5 h-auto font-bold">
-                Regarder la démo
-              </LiquidButton>
+            <a href="#vsl" className="w-full sm:w-auto">
+              <GlowButton variant="outline" size="lg" showIcon={false} className="w-full sm:w-auto md:glow-btn-xl">Regarder la démo</GlowButton>
             </a>
           </div>
 
@@ -59,8 +55,7 @@ const HeroSection = ({ videoUrl = null }: HeroSectionProps) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.5 }}
           id="vsl"
-          className="relative w-full max-w-[1100px] mx-auto px-4 mt-12 md:mt-16"
-          style={{ marginBottom: "-160px" }}
+          className="relative w-full max-w-[1100px] mx-auto px-4 mt-10 md:mt-16 mb-[-80px] md:mb-[-160px]"
         >
           <CardCanvas>
             <GlowCard className="w-full">

@@ -1,5 +1,5 @@
 import { X, Check } from "lucide-react";
-import { LiquidButton } from "@/components/ui/liquid-glass-button";
+import { GlowButton } from "@/components/ui/glow-button";
 import { GradientCard } from "@/components/ui/gradient-card";
 import { motion } from "framer-motion";
 
@@ -41,7 +41,7 @@ const PricingSection = () => {
             transition={{ duration: 0.6 }}
             className="flex items-center"
           >
-            <div className="h-full w-full rounded-2xl border border-border/60 bg-muted/40 p-10 md:p-12 opacity-75 scale-[0.97]">
+            <div className="h-full w-full rounded-2xl border border-border/60 bg-muted/40 p-6 md:p-12 opacity-75 scale-[0.97]">
               <h3 className="text-xl font-semibold text-foreground/50 mb-2">Réceptionniste traditionnelle</h3>
               <div className="text-3xl font-bold text-foreground/50 mb-1">45 000$ – 60 000$/an</div>
               <p className="text-sm text-foreground/40 mb-6">3 750$ – 5 000$/mois</p>
@@ -64,7 +64,7 @@ const PricingSection = () => {
             transition={{ duration: 0.6, delay: 0.15 }}
           >
             <GradientCard className="h-full ring-2 ring-primary/30" glowColor="blue">
-              <div className="relative p-10 md:p-12">
+              <div className="relative p-6 md:p-12">
                 <span className="absolute top-4 right-6 px-3 py-1 bg-primary text-primary-foreground text-xs font-semibold rounded-full">
                   Recommandé
                 </span>
@@ -87,7 +87,7 @@ const PricingSection = () => {
 
         <div className="text-center mt-10">
           <a href="#cta-final">
-            <LiquidButton size="lg">Réserver un appel découverte</LiquidButton>
+            <GlowButton size="lg">Réserver un appel découverte</GlowButton>
           </a>
         </div>
       </div>

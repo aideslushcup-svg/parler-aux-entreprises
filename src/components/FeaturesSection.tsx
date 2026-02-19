@@ -1,4 +1,4 @@
-import { LiquidButton } from "@/components/ui/liquid-glass-button";
+import { GlowButton } from "@/components/ui/glow-button";
 import { WorldMap } from "@/components/ui/world-map";
 import { MeshBackground } from "@/components/ui/mesh-background";
 import { GradientCard } from "@/components/ui/gradient-card";
@@ -44,7 +44,7 @@ export default function FeaturesSection() {
         </motion.div>
 
         {/* Feature cards grid */}
-        <div className="mt-16 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 md:mt-16 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
           {/* Card 1 — Configuration */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -204,7 +204,7 @@ export default function FeaturesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="mt-20"
+          className="mt-12 md:mt-20"
         >
           <div className="text-center mb-8">
             <h3 className="text-2xl md:text-3xl font-bold text-foreground">
@@ -232,12 +232,7 @@ export default function FeaturesSection() {
           className="text-center mt-14"
         >
           <a href="#cta-final">
-            <LiquidButton
-              size="lg"
-              className="text-lg px-10 py-5 h-auto font-bold"
-            >
-              Réserver un appel découverte
-            </LiquidButton>
+            <GlowButton size="lg">Réserver un appel découverte</GlowButton>
           </a>
         </motion.div>
       </div>
