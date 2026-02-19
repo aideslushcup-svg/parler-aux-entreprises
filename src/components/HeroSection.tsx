@@ -41,7 +41,7 @@ const HeroSection = ({ videoUrl = null }: HeroSectionProps) => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center gap-4 pt-4 w-full sm:w-auto">
-            <a href="#cta-final" className="w-full sm:w-auto">
+            <a href="https://app.calendiapro.com/formulaire-qualification" className="w-full sm:w-auto">
               <GlowButton size="lg" className="w-full sm:w-auto md:glow-btn-xl">Réserver un appel</GlowButton>
             </a>
             <a href="#vsl" className="w-full sm:w-auto">

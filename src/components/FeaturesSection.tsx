@@ -208,7 +208,7 @@ export default function FeaturesSection() {
           {...fadeInUp30(0.3)}
           className="text-center mt-14"
         >
-          <a href="#cta-final">
+          <a href="https://app.calendiapro.com/formulaire-qualification">
             <GlowButton size="lg">Réserver un appel découverte</GlowButton>
           </a>
         </motion.div>

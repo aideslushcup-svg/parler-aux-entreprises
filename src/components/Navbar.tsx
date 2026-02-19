@@ -46,7 +46,7 @@ const Navbar = () => {
         </div>
 
         {/* Desktop CTA */}
-        <a href="#cta-final" className="hidden md:inline-flex">
+        <a href="https://app.calendiapro.com/formulaire-qualification" className="hidden md:inline-flex">
           <GlowButton size="sm">Réserver un appel</GlowButton>
         </a>
 
@@ -84,7 +84,7 @@ const Navbar = () => {
             {link.label}
           </a>
         ))}
-        <a href="#cta-final" onClick={() => setMenuOpen(false)}>
+        <a href="https://app.calendiapro.com/formulaire-qualification" onClick={() => setMenuOpen(false)}>
           <GlowButton size="lg">Réserver un appel</GlowButton>
         </a>
       </div>

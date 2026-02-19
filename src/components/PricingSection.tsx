@@ -79,7 +79,7 @@ const PricingSection = () => {
         </div>
 
         <div className="text-center mt-10">
-          <a href="#cta-final">
+          <a href="https://app.calendiapro.com/formulaire-qualification">
             <GlowButton size="lg">Réserver un appel découverte</GlowButton>
           </a>
         </div>
