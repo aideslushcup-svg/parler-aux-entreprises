@@ -30,7 +30,7 @@ const FooterSection = () => {
             Réservez un appel découverte gratuit de 15 minutes. On vous montre exactement
             comment Calendia peut s'adapter à votre entreprise.
           </p>
-          <a href="#">
+          <a href="https://app.calendiapro.com/formulaire-qualification">
             <GlowButton size="xl">Réserver mon appel gratuit</GlowButton>
           </a>
           <p className="text-sm text-foreground/60 mt-4">
