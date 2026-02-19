@@ -50,41 +50,44 @@ const Navbar = () => {
           <GlowButton size="sm">Réserver un appel</GlowButton>
         </a>
 
-        {/* Mobile hamburger */}
+        {/* Mobile hamburger — CSS icons, no re-render on toggle */}
         <button
-          className="md:hidden text-foreground"
+          className="md:hidden text-foreground relative w-6 h-6"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Menu"
         >
-          {menuOpen ? <X size={24} /> : <Menu size={24} />}
+          <Menu size={24} className={`absolute inset-0 transition-opacity duration-150 ${menuOpen ? "opacity-0" : "opacity-100"}`} />
+          <X size={24} className={`absolute inset-0 transition-opacity duration-150 ${menuOpen ? "opacity-100" : "opacity-0"}`} />
         </button>
       </nav>
 
-      {/* Mobile drawer */}
-      {menuOpen && (
-        <div className="fixed inset-0 top-0 z-40 bg-background flex flex-col items-center justify-center gap-8 md:hidden">
-          <button
-            className="absolute top-6 right-6 text-foreground"
+      {/* Mobile drawer — always in DOM, shown/hidden via CSS (no mount/unmount lag) */}
+      <div
+        className={`fixed inset-0 top-0 z-40 bg-background flex flex-col items-center justify-center gap-8 md:hidden transition-opacity duration-200 ${
+          menuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        }`}
+      >
+        <button
+          className="absolute top-6 right-6 text-foreground"
+          onClick={() => setMenuOpen(false)}
+          aria-label="Fermer"
+        >
+          <X size={28} />
+        </button>
+        {navLinks.map((link) => (
+          <a
+            key={link.href}
+            href={link.href}
             onClick={() => setMenuOpen(false)}
-            aria-label="Fermer"
+            className="text-foreground font-semibold text-2xl hover:text-primary transition-colors"
           >
-            <X size={28} />
-          </button>
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={() => setMenuOpen(false)}
-              className="text-foreground font-semibold text-2xl hover:text-primary transition-colors"
-            >
-              {link.label}
-            </a>
-          ))}
-          <a href="#cta-final" onClick={() => setMenuOpen(false)}>
-            <GlowButton size="lg">Réserver un appel</GlowButton>
+            {link.label}
           </a>
-        </div>
-      )}
+        ))}
+        <a href="#cta-final" onClick={() => setMenuOpen(false)}>
+          <GlowButton size="lg">Réserver un appel</GlowButton>
+        </a>
+      </div>
     </header>
   );
 };
