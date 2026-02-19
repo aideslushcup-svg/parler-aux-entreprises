@@ -2,6 +2,7 @@ import { CardContent } from "@/components/ui/card";
 import { GlowCard } from "@/components/ui/spotlight-card";
 import { Shield, Clock, PhoneOff, DollarSign, Zap } from "lucide-react";
 import { motion } from "framer-motion";
+import { fadeInUp } from "@/lib/motion";
 
 const ProblemSolution = () => {
   return (
@@ -15,10 +16,7 @@ const ProblemSolution = () => {
       <div className="mx-auto max-w-3xl lg:max-w-5xl px-6">
         {/* Section header — scroll reveal */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          {...fadeInUp()}
           className="text-center mb-12 md:mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">

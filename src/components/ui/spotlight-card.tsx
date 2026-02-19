@@ -37,6 +37,9 @@ const GlowCard: React.FC<GlowCardProps> = ({
   const innerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Skip on touch devices — no cursor, no effect needed, saves CPU
+    if (!window.matchMedia('(hover: hover)').matches) return;
+
     const syncPointer = (e: PointerEvent) => {
       const { clientX: x, clientY: y } = e;
       if (cardRef.current) {
@@ -56,6 +59,8 @@ const GlowCard: React.FC<GlowCardProps> = ({
     if (customSize) return '';
     return sizeMap[size];
   };
+
+  const isHoverDevice = typeof window !== 'undefined' && window.matchMedia('(hover: hover)').matches;
 
   const getInlineStyles = (): React.CSSProperties & Record<string, string | number> => {
     const styles: any = {
@@ -79,7 +84,8 @@ const GlowCard: React.FC<GlowCardProps> = ({
       backgroundColor: 'var(--backdrop, transparent)',
       backgroundSize: 'calc(100% + (2 * var(--border-size))) calc(100% + (2 * var(--border-size)))',
       backgroundPosition: '50% 50%',
-      backgroundAttachment: 'fixed',
+      // 'fixed' = needed for cursor tracking, but causes full-page repaint on mobile scroll
+      backgroundAttachment: isHoverDevice ? 'fixed' : 'scroll',
       border: 'var(--border-size) solid var(--backup-border)',
       position: 'relative' as const,
       touchAction: 'pan-y' as const,

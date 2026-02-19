@@ -5,6 +5,32 @@ import { useMotionValue, animate, motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import useMeasure from 'react-use-measure';
 
+// CSS marquee (compositor thread) — not affected by JS scroll throttling on mobile
+const CSSMarquee = ({
+  texts, gap, duration, className, textClassName,
+}: { texts: string[]; gap: number; duration: number; className?: string; textClassName?: string }) => (
+  <div className={cn('overflow-hidden', className)}>
+    <div
+      style={{
+        display: 'flex',
+        width: 'max-content',
+        // Each item has marginRight = gap, so -50% lands exactly on the seam
+        animation: `marquee-scroll ${duration}s linear infinite`,
+      }}
+    >
+      {[...texts, ...texts].map((text, i) => (
+        <div
+          key={i}
+          style={{ marginRight: `${gap}px` }}
+          className={cn('whitespace-nowrap', textClassName)}
+        >
+          {text}
+        </div>
+      ))}
+    </div>
+  </div>
+);
+
 type InfiniteTextCarouselProps = {
   texts: string[];
   gap?: number;
@@ -33,6 +59,11 @@ export function InfiniteTextCarousel({
   className,
   textClassName,
 }: InfiniteTextCarouselProps) {
+  // On mobile (touch devices), use CSS animation — not affected by scroll throttling
+  const isTouch = typeof window !== 'undefined' && !window.matchMedia('(hover: hover)').matches;
+  if (isTouch) {
+    return <CSSMarquee texts={texts} gap={gap} duration={duration} className={className} textClassName={textClassName} />;
+  }
   const [currentDuration, setCurrentDuration] = useState(duration);
   const [ref, { width, height }] = useMeasure();
   const translation = useMotionValue(0);

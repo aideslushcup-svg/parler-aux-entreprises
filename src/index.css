@@ -234,3 +234,9 @@
   .md\:glow-btn-xl { padding: 18px 44px; font-size: 18px; }
   .md\:glow-btn-lg { padding: 14px 36px; font-size: 16px; }
 }
+
+/* CSS marquee for mobile (compositor thread — not paused by JS scroll) */
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}

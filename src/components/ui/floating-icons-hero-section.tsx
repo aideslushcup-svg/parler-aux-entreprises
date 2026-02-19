@@ -36,6 +36,9 @@ const Icon = ({
   const springY = useSpring(y, { stiffness: 300, damping: 20 });
 
   React.useEffect(() => {
+    // Skip mouse-repulsion spring on touch devices — no cursor, just wastes CPU
+    if (!window.matchMedia('(hover: hover)').matches) return;
+
     const handleMouseMove = () => {
       if (ref.current) {
         const rect = ref.current.getBoundingClientRect();

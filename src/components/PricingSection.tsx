@@ -2,6 +2,7 @@ import { X, Check } from "lucide-react";
 import { GlowButton } from "@/components/ui/glow-button";
 import { GradientCard } from "@/components/ui/gradient-card";
 import { motion } from "framer-motion";
+import { fadeInUp30 } from "@/lib/motion";
 
 const tradFeatures = [
   "Disponible 9h à 17h seulement",
@@ -35,10 +36,7 @@ const PricingSection = () => {
         <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {/* Traditional — pushed back / receded */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            {...fadeInUp30()}
             className="flex items-center"
           >
             <div className="h-full w-full rounded-2xl border border-border/60 bg-muted/40 p-6 md:p-12 opacity-75 scale-[0.97]">
@@ -57,12 +55,7 @@ const PricingSection = () => {
           </motion.div>
 
           {/* Calendia — prominent floating card with blue glow */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.15 }}
-          >
+          <motion.div {...fadeInUp30(0.15)}>
             <GradientCard className="h-full ring-2 ring-primary/30" glowColor="blue">
               <div className="relative p-6 md:p-12">
                 <span className="absolute top-4 right-6 px-3 py-1 bg-primary text-primary-foreground text-xs font-semibold rounded-full">

@@ -13,6 +13,7 @@ import {
   UserCheck,
 } from "lucide-react";
 import { motion } from "framer-motion";
+import { fadeInUp, fadeInUp30 } from "@/lib/motion";
 
 // Single Quebec marker on the world map
 const quebecMarker = [{ lat: 46.8, lng: -71.2, label: "Québec" }];
@@ -28,10 +29,7 @@ export default function FeaturesSection() {
       <div className="relative z-10 mx-auto max-w-5xl px-6">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          {...fadeInUp()}
           className="text-center"
         >
           <h2 className="text-3xl md:text-4xl font-semibold text-foreground tracking-tight">
@@ -46,12 +44,7 @@ export default function FeaturesSection() {
         {/* Feature cards grid */}
         <div className="mt-10 md:mt-16 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
           {/* Card 1 — Configuration */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0 }}
-          >
+          <motion.div {...fadeInUp(0)}>
             <GradientCard className="h-full">
               <div className="p-8">
                 <Settings className="text-primary size-6" />
@@ -95,12 +88,7 @@ export default function FeaturesSection() {
           </motion.div>
 
           {/* Card 2 — Réponse 24/7 */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.15 }}
-          >
+          <motion.div {...fadeInUp(0.15)}>
             <GradientCard className="h-full">
               <div className="group px-8 pt-8 h-full">
                 <PhoneIncoming className="text-primary size-6" />
@@ -144,12 +132,7 @@ export default function FeaturesSection() {
           </motion.div>
 
           {/* Card 3 — Contrôle total */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
+          <motion.div {...fadeInUp(0.3)}>
             <GradientCard className="h-full">
               <div className="group px-8 pt-8 h-full">
                 <Headphones className="text-primary size-6" />
@@ -200,10 +183,7 @@ export default function FeaturesSection() {
 
         {/* Map section — floating card with border */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.2 }}
+          {...fadeInUp(0.2)}
           className="mt-12 md:mt-20"
         >
           <div className="text-center mb-8">
@@ -225,10 +205,7 @@ export default function FeaturesSection() {
 
         {/* CTA */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
+          {...fadeInUp30(0.3)}
           className="text-center mt-14"
         >
           <a href="#cta-final">
