@@ -4,7 +4,7 @@ import { Web3MediaHero } from "@/components/ui/web3media-hero";
 import { CardCanvas, GlowCard } from "@/components/ui/animated-glow-card";
 import { motion } from "framer-motion";
 
-const isTouch = typeof window !== 'undefined' && !window.matchMedia('(hover: hover)').matches;
+const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
 
 interface HeroSectionProps {
   videoUrl?: string | null;
@@ -15,7 +15,7 @@ const HeroSection = ({ videoUrl = null }: HeroSectionProps) => {
     <Web3MediaHero className="pt-24 pb-0 md:pt-32">
       <div className="flex flex-col items-center text-center w-full">
         <motion.div
-          initial={isTouch ? false : { opacity: 0, y: 30 }}
+          initial={isMobile ? false : { opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="flex flex-col items-center text-center max-w-3xl gap-5 px-4"
@@ -53,7 +53,7 @@ const HeroSection = ({ videoUrl = null }: HeroSectionProps) => {
 
         {/* Floating Video Card — overlaps hero boundary */}
         <motion.div
-          initial={isTouch ? false : { opacity: 0, y: 60 }}
+          initial={isMobile ? false : { opacity: 0, y: 60 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.5 }}
           id="vsl"

@@ -60,7 +60,7 @@ export function InfiniteTextCarousel({
   textClassName,
 }: InfiniteTextCarouselProps) {
   // On mobile (touch devices), use CSS animation — not affected by scroll throttling
-  const isTouch = typeof window !== 'undefined' && !window.matchMedia('(hover: hover)').matches;
+  const isTouch = typeof window !== 'undefined' && window.innerWidth < 768;
   if (isTouch) {
     return <CSSMarquee texts={texts} gap={gap} duration={duration} className={className} textClassName={textClassName} />;
   }

@@ -1,12 +1,12 @@
 /**
  * Returns motion props for whileInView animations.
- * On mobile (touch devices): initial={false} — elements start visible, no animation.
+ * On mobile (< 768px): elements start visible, no animation.
  * On desktop: fade-in-up effect as element scrolls into view.
  */
-const isTouch = typeof window !== 'undefined' && !window.matchMedia('(hover: hover)').matches;
+const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
 
 export function fadeInUp(delay = 0) {
-  if (isTouch) return {};
+  if (isMobile) return {};
   return {
     initial: { opacity: 0, y: 40 },
     whileInView: { opacity: 1, y: 0 },
@@ -16,7 +16,7 @@ export function fadeInUp(delay = 0) {
 }
 
 export function fadeInUp30(delay = 0) {
-  if (isTouch) return {};
+  if (isMobile) return {};
   return {
     initial: { opacity: 0, y: 30 },
     whileInView: { opacity: 1, y: 0 },

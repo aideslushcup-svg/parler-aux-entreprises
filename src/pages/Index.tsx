@@ -1,3 +1,4 @@
+import { MotionConfig } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import VideoPlayer from "@/components/VideoPlayer";
@@ -8,9 +9,11 @@ import IntegrationsSection from "@/components/IntegrationsSection";
 import FAQSection from "@/components/FAQSection";
 import FooterSection from "@/components/FooterSection";
 
+const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+
 const Index = () => {
   return (
-    <>
+    <MotionConfig reducedMotion={isMobile ? "always" : "never"}>
       <Navbar />
       <main>
         <HeroSection videoUrl={null} />
@@ -22,7 +25,7 @@ const Index = () => {
         <FAQSection />
       </main>
       <FooterSection />
-    </>
+    </MotionConfig>
   );
 };
 

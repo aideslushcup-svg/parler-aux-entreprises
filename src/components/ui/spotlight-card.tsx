@@ -38,7 +38,7 @@ const GlowCard: React.FC<GlowCardProps> = ({
 
   useEffect(() => {
     // Skip on touch devices — no cursor, no effect needed, saves CPU
-    if (!window.matchMedia('(hover: hover)').matches) return;
+    if (window.innerWidth < 768) return;
 
     const syncPointer = (e: PointerEvent) => {
       const { clientX: x, clientY: y } = e;
@@ -60,7 +60,7 @@ const GlowCard: React.FC<GlowCardProps> = ({
     return sizeMap[size];
   };
 
-  const isHoverDevice = typeof window !== 'undefined' && window.matchMedia('(hover: hover)').matches;
+  const isHoverDevice = typeof window !== 'undefined' && window.innerWidth >= 768;
 
   const getInlineStyles = (): React.CSSProperties & Record<string, string | number> => {
     const styles: any = {

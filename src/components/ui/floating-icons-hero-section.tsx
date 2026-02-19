@@ -37,7 +37,7 @@ const Icon = ({
 
   React.useEffect(() => {
     // Skip mouse-repulsion spring on touch devices — no cursor, just wastes CPU
-    if (!window.matchMedia('(hover: hover)').matches) return;
+    if (window.innerWidth < 768) return;
 
     const handleMouseMove = () => {
       if (ref.current) {
