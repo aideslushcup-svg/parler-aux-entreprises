@@ -1,5 +1,6 @@
 import { Play, Clock, Subtitles } from "lucide-react";
 import { GlowButton } from "@/components/ui/glow-button";
+import { Web3MediaHero } from "@/components/ui/web3media-hero";
 import { CardCanvas, GlowCard } from "@/components/ui/animated-glow-card";
 import { motion } from "framer-motion";
 
@@ -11,7 +12,7 @@ interface HeroSectionProps {
 
 const HeroSection = ({ videoUrl = null }: HeroSectionProps) => {
   return (
-    <section className="pt-24 pb-0 md:pt-32 bg-background">
+    <Web3MediaHero className="pt-24 pb-0 md:pt-32">
       <div className="flex flex-col items-center text-center w-full">
         <motion.div
           initial={isMobile ? false : { opacity: 0, y: 30 }}
@@ -106,7 +107,7 @@ const HeroSection = ({ videoUrl = null }: HeroSectionProps) => {
           </div>
         </motion.div>
       </div>
-    </section>
+    </Web3MediaHero>
   );
 };
 
