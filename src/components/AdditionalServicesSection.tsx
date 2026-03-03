@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import {
   IconBolt,
+  IconPhoneCall,
   IconBrandInstagram,
   IconStar,
   IconRobot,
@@ -22,6 +23,12 @@ const AdditionalServicesSection = () => {
       icon: <IconBolt />,
     },
     {
+      title: "Rappel automatique de leads web",
+      description:
+        "Un visiteur remplit un formulaire sur votre site? Notre IA le rappelle en moins de 30 secondes, répond à ses questions et prend le rendez-vous. Pendant que vos concurrents répondent en 24h, vous êtes déjà en ligne.",
+      icon: <IconPhoneCall />,
+    },
+    {
       title: "Réponses automatiques Messenger & Instagram",
       description:
         "Conversations naturelles et humaines sur vos réseaux sociaux. Redirection vers votre site ou prise de RDV directement dans la messagerie.",
@@ -34,9 +41,9 @@ const AdditionalServicesSection = () => {
       icon: <IconStar />,
     },
     {
-      title: "Automatisation de tâches sur mesure",
+      title: "Workflows & automatisations sur mesure",
       description:
-        "Workflows entièrement personnalisables selon vos besoins. Automatisez n'importe quel processus répétitif de votre entreprise.",
+        "Vous avez un processus que vous aimeriez automatiser? Parlez-nous-en. Facturation, onboarding, rapports, notifications — on le bâtit pour vous. Tout est possible avec l'IA.",
       icon: <IconRobot />,
     },
     {
@@ -85,7 +92,7 @@ const AdditionalServicesSection = () => {
 
         {/* Services Grid */}
         <motion.div {...fadeInUp(0.2)}>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 relative z-10">
             {services.map((service, index) => (
               <Feature key={service.title} {...service} index={index} />
             ))}
@@ -118,14 +125,14 @@ const Feature = ({
     <div
       className={cn(
         "flex flex-col lg:border-r py-10 relative group/feature border-border",
-        (index === 0 || index === 4) && "lg:border-l border-border",
-        index < 4 && "lg:border-b border-border"
+        (index === 0 || index === 3 || index === 6) && "lg:border-l border-border",
+        index < 6 && "lg:border-b border-border"
       )}
     >
-      {index < 4 && (
+      {index < 6 && (
         <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-t from-primary/5 to-transparent pointer-events-none" />
       )}
-      {index >= 4 && (
+      {index >= 6 && (
         <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-b from-primary/5 to-transparent pointer-events-none" />
       )}
       <div className="mb-4 relative z-10 px-10 text-primary">

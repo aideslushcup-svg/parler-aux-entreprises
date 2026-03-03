@@ -59,18 +59,17 @@ export function InfiniteTextCarousel({
   className,
   textClassName,
 }: InfiniteTextCarouselProps) {
-  // On mobile (touch devices), use CSS animation — not affected by scroll throttling
-  const isTouch = typeof window !== 'undefined' && window.innerWidth < 768;
-  if (isTouch) {
-    return <CSSMarquee texts={texts} gap={gap} duration={duration} className={className} textClassName={textClassName} />;
-  }
   const [currentDuration, setCurrentDuration] = useState(duration);
   const [ref, { width, height }] = useMeasure();
   const translation = useMotionValue(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [key, setKey] = useState(0);
 
+  // On mobile (touch devices), use CSS animation — not affected by scroll throttling
+  const isTouch = typeof window !== 'undefined' && window.innerWidth < 768;
+
   useEffect(() => {
+    if (isTouch) return;
     let controls;
     const size = direction === 'horizontal' ? width : height;
     const contentSize = size + gap;
@@ -111,7 +110,12 @@ export function InfiniteTextCarousel({
     isTransitioning,
     direction,
     reverse,
+    isTouch,
   ]);
+
+  if (isTouch) {
+    return <CSSMarquee texts={texts} gap={gap} duration={duration} className={className} textClassName={textClassName} />;
+  }
 
   const hoverProps = durationOnHover
     ? {
